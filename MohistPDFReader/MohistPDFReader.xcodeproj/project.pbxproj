@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B3DAFFD9543FBE7E89146C0 /* Pods_MohistPDFReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05235F12F5EF9434FEB1041E /* Pods_MohistPDFReader.framework */; };
+		6A18C63E2193074C009C1870 /* keep.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6A18C63D2193074C009C1870 /* keep.mp4 */; };
+		6A18C640219308A7009C1870 /* ADPageWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A18C63F219308A7009C1870 /* ADPageWelcomeViewController.swift */; };
+		6A18C64221930C4D009C1870 /* ADPageViewWelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A18C64121930C4D009C1870 /* ADPageViewWelcomeViewModel.swift */; };
+		6A18C6442193D96C009C1870 /* NewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A18C6432193D96C009C1870 /* NewFeatureView.swift */; };
+		6A5C5A1A2193EB3D00A197A1 /* NewFeatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A192193EB3D00A197A1 /* NewFeatureViewModel.swift */; };
+		6A5C5A1C2194299900A197A1 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A1B2194299900A197A1 /* AppVersion.swift */; };
+		6AF3B8042192815300913CA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B8032192815300913CA9 /* AppDelegate.swift */; };
+		6AF3B8062192815300913CA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B8052192815300913CA9 /* ViewController.swift */; };
+		6AF3B8092192815300913CA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF3B8072192815300913CA9 /* Main.storyboard */; };
+		6AF3B80B2192815400913CA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AF3B80A2192815400913CA9 /* Assets.xcassets */; };
+		6AF3B80E2192815400913CA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF3B80C2192815400913CA9 /* LaunchScreen.storyboard */; };
+		6AF3B821219291D400913CA9 /* UIImage+LaunchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B820219291D400913CA9 /* UIImage+LaunchImage.swift */; };
+		6AF3B8232192B3A700913CA9 /* AdPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B8222192B3A700913CA9 /* AdPageViewModel.swift */; };
+		6AF3B8262192B41500913CA9 /* AdPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B8252192B41500913CA9 /* AdPage.swift */; };
+		6AF3B8282192B43A00913CA9 /* AdPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B8272192B43A00913CA9 /* AdPageView.swift */; };
+		6AF3B82B2192D25E00913CA9 /* AdWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B82A2192D25E00913CA9 /* AdWebViewController.swift */; };
+		6AF3B82D2192D35100913CA9 /* AdWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B82C2192D35100913CA9 /* AdWebViewModel.swift */; };
+		6AF3B82F2192D35C00913CA9 /* AdWeb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B82E2192D35C00913CA9 /* AdWeb.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05235F12F5EF9434FEB1041E /* Pods_MohistPDFReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MohistPDFReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36E967DBE0C4D835927B773E /* Pods-MohistPDFReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MohistPDFReader.debug.xcconfig"; path = "Target Support Files/Pods-MohistPDFReader/Pods-MohistPDFReader.debug.xcconfig"; sourceTree = "<group>"; };
+		3FACAB42E016E5A0B73A8EDE /* Pods-MohistPDFReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MohistPDFReader.release.xcconfig"; path = "Target Support Files/Pods-MohistPDFReader/Pods-MohistPDFReader.release.xcconfig"; sourceTree = "<group>"; };
+		6A18C63D2193074C009C1870 /* keep.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = keep.mp4; sourceTree = "<group>"; };
+		6A18C63F219308A7009C1870 /* ADPageWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADPageWelcomeViewController.swift; sourceTree = "<group>"; };
+		6A18C64121930C4D009C1870 /* ADPageViewWelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADPageViewWelcomeViewModel.swift; sourceTree = "<group>"; };
+		6A18C6432193D96C009C1870 /* NewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeatureView.swift; sourceTree = "<group>"; };
+		6A5C5A192193EB3D00A197A1 /* NewFeatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeatureViewModel.swift; sourceTree = "<group>"; };
+		6A5C5A1B2194299900A197A1 /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
+		6AF3B8002192815300913CA9 /* MohistPDFReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MohistPDFReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AF3B8032192815300913CA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6AF3B8052192815300913CA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6AF3B8082192815300913CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6AF3B80A2192815400913CA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6AF3B80D2192815400913CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6AF3B80F2192815400913CA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AF3B820219291D400913CA9 /* UIImage+LaunchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+LaunchImage.swift"; sourceTree = "<group>"; };
+		6AF3B8222192B3A700913CA9 /* AdPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPageViewModel.swift; sourceTree = "<group>"; };
+		6AF3B8252192B41500913CA9 /* AdPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPage.swift; sourceTree = "<group>"; };
+		6AF3B8272192B43A00913CA9 /* AdPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPageView.swift; sourceTree = "<group>"; };
+		6AF3B8292192BF2100913CA9 /* ADPage_README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ADPage_README.md; sourceTree = "<group>"; };
+		6AF3B82A2192D25E00913CA9 /* AdWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdWebViewController.swift; sourceTree = "<group>"; };
+		6AF3B82C2192D35100913CA9 /* AdWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdWebViewModel.swift; sourceTree = "<group>"; };
+		6AF3B82E2192D35C00913CA9 /* AdWeb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdWeb.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6AF3B7FD2192815300913CA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B3DAFFD9543FBE7E89146C0 /* Pods_MohistPDFReader.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BE52724170E67731D05CF9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05235F12F5EF9434FEB1041E /* Pods_MohistPDFReader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A18C63B2192FA71009C1870 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		6A18C63C2193073D009C1870 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6A18C63D2193074C009C1870 /* keep.mp4 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6AF3B7F72192815300913CA9 = {
+			isa = PBXGroup;
+			children = (
+				6AF3B8022192815300913CA9 /* MohistPDFReader */,
+				6AF3B8012192815300913CA9 /* Products */,
+				D4A3C4FE767209E245268902 /* Pods */,
+				2BE52724170E67731D05CF9D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6AF3B8012192815300913CA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6AF3B8002192815300913CA9 /* MohistPDFReader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6AF3B8022192815300913CA9 /* MohistPDFReader */ = {
+			isa = PBXGroup;
+			children = (
+				6AF3B8162192881700913CA9 /* LaunchScreen */,
+				6AF3B815219287E400913CA9 /* Welcome */,
+				6AF3B8172192884300913CA9 /* Signin && Signup */,
+				6AF3B8182192889000913CA9 /* Tabbar */,
+				6AF3B819219288B500913CA9 /* Profile */,
+				6AF3B81A219288CB00913CA9 /* PDFReader */,
+				6AF3B81F219291AD00913CA9 /* Extensions */,
+				6AF3B8032192815300913CA9 /* AppDelegate.swift */,
+				6AF3B8052192815300913CA9 /* ViewController.swift */,
+				6AF3B8072192815300913CA9 /* Main.storyboard */,
+				6AF3B80A2192815400913CA9 /* Assets.xcassets */,
+				6AF3B80C2192815400913CA9 /* LaunchScreen.storyboard */,
+				6AF3B80F2192815400913CA9 /* Info.plist */,
+			);
+			path = MohistPDFReader;
+			sourceTree = "<group>";
+		};
+		6AF3B815219287E400913CA9 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		6AF3B8162192881700913CA9 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6AF3B81B21928BED00913CA9 /* AdPage */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		6AF3B8172192884300913CA9 /* Signin && Signup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Signin && Signup";
+			sourceTree = "<group>";
+		};
+		6AF3B8182192889000913CA9 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		6AF3B819219288B500913CA9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		6AF3B81A219288CB00913CA9 /* PDFReader */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PDFReader;
+			sourceTree = "<group>";
+		};
+		6AF3B81B21928BED00913CA9 /* AdPage */ = {
+			isa = PBXGroup;
+			children = (
+				6A18C63C2193073D009C1870 /* Resources */,
+				6A18C63B2192FA71009C1870 /* APIs */,
+				6AF3B8242192B3CC00913CA9 /* Controllers */,
+				6AF3B81E21928C4200913CA9 /* ViewModels */,
+				6AF3B81D21928C3A00913CA9 /* Models */,
+				6AF3B81C21928C2600913CA9 /* Views */,
+				6AF3B8292192BF2100913CA9 /* ADPage_README.md */,
+			);
+			path = AdPage;
+			sourceTree = "<group>";
+		};
+		6AF3B81C21928C2600913CA9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6AF3B8272192B43A00913CA9 /* AdPageView.swift */,
+				6A18C6432193D96C009C1870 /* NewFeatureView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6AF3B81D21928C3A00913CA9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6AF3B8252192B41500913CA9 /* AdPage.swift */,
+				6AF3B82E2192D35C00913CA9 /* AdWeb.swift */,
+				6A5C5A1B2194299900A197A1 /* AppVersion.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6AF3B81E21928C4200913CA9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6AF3B8222192B3A700913CA9 /* AdPageViewModel.swift */,
+				6AF3B82C2192D35100913CA9 /* AdWebViewModel.swift */,
+				6A18C64121930C4D009C1870 /* ADPageViewWelcomeViewModel.swift */,
+				6A5C5A192193EB3D00A197A1 /* NewFeatureViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6AF3B81F219291AD00913CA9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6AF3B820219291D400913CA9 /* UIImage+LaunchImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6AF3B8242192B3CC00913CA9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6AF3B82A2192D25E00913CA9 /* AdWebViewController.swift */,
+				6A18C63F219308A7009C1870 /* ADPageWelcomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D4A3C4FE767209E245268902 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36E967DBE0C4D835927B773E /* Pods-MohistPDFReader.debug.xcconfig */,
+				3FACAB42E016E5A0B73A8EDE /* Pods-MohistPDFReader.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6AF3B7FF2192815300913CA9 /* MohistPDFReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AF3B8122192815400913CA9 /* Build configuration list for PBXNativeTarget "MohistPDFReader" */;
+			buildPhases = (
+				39761155B7A1D4D33E78D346 /* [CP] Check Pods Manifest.lock */,
+				6AF3B7FC2192815300913CA9 /* Sources */,
+				6AF3B7FD2192815300913CA9 /* Frameworks */,
+				6AF3B7FE2192815300913CA9 /* Resources */,
+				E1D74B915D30E43298A98DC2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MohistPDFReader;
+			productName = MohistPDFReader;
+			productReference = 6AF3B8002192815300913CA9 /* MohistPDFReader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6AF3B7F82192815300913CA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = mozhe;
+				TargetAttributes = {
+					6AF3B7FF2192815300913CA9 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 6AF3B7FB2192815300913CA9 /* Build configuration list for PBXProject "MohistPDFReader" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6AF3B7F72192815300913CA9;
+			productRefGroup = 6AF3B8012192815300913CA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6AF3B7FF2192815300913CA9 /* MohistPDFReader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6AF3B7FE2192815300913CA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A18C63E2193074C009C1870 /* keep.mp4 in Resources */,
+				6AF3B80E2192815400913CA9 /* LaunchScreen.storyboard in Resources */,
+				6AF3B80B2192815400913CA9 /* Assets.xcassets in Resources */,
+				6AF3B8092192815300913CA9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39761155B7A1D4D33E78D346 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MohistPDFReader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1D74B915D30E43298A98DC2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MohistPDFReader/Pods-MohistPDFReader-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MohistPDFReader/Pods-MohistPDFReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6AF3B7FC2192815300913CA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A18C6442193D96C009C1870 /* NewFeatureView.swift in Sources */,
+				6AF3B8262192B41500913CA9 /* AdPage.swift in Sources */,
+				6AF3B8062192815300913CA9 /* ViewController.swift in Sources */,
+				6AF3B8282192B43A00913CA9 /* AdPageView.swift in Sources */,
+				6AF3B8232192B3A700913CA9 /* AdPageViewModel.swift in Sources */,
+				6A18C640219308A7009C1870 /* ADPageWelcomeViewController.swift in Sources */,
+				6A5C5A1C2194299900A197A1 /* AppVersion.swift in Sources */,
+				6AF3B8042192815300913CA9 /* AppDelegate.swift in Sources */,
+				6AF3B821219291D400913CA9 /* UIImage+LaunchImage.swift in Sources */,
+				6A18C64221930C4D009C1870 /* ADPageViewWelcomeViewModel.swift in Sources */,
+				6AF3B82D2192D35100913CA9 /* AdWebViewModel.swift in Sources */,
+				6AF3B82B2192D25E00913CA9 /* AdWebViewController.swift in Sources */,
+				6A5C5A1A2193EB3D00A197A1 /* NewFeatureViewModel.swift in Sources */,
+				6AF3B82F2192D35C00913CA9 /* AdWeb.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6AF3B8072192815300913CA9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AF3B8082192815300913CA9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6AF3B80C2192815400913CA9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AF3B80D2192815400913CA9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6AF3B8102192815400913CA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6AF3B8112192815400913CA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6AF3B8132192815400913CA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36E967DBE0C4D835927B773E /* Pods-MohistPDFReader.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75J4834735;
+				INFOPLIST_FILE = MohistPDFReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mozheanquan.MohistPDFReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6AF3B8142192815400913CA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FACAB42E016E5A0B73A8EDE /* Pods-MohistPDFReader.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75J4834735;
+				INFOPLIST_FILE = MohistPDFReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mozheanquan.MohistPDFReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6AF3B7FB2192815300913CA9 /* Build configuration list for PBXProject "MohistPDFReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AF3B8102192815400913CA9 /* Debug */,
+				6AF3B8112192815400913CA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AF3B8122192815400913CA9 /* Build configuration list for PBXNativeTarget "MohistPDFReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AF3B8132192815400913CA9 /* Debug */,
+				6AF3B8142192815400913CA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6AF3B7F82192815300913CA9 /* Project object */;
+}
