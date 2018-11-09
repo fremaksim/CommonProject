@@ -44,4 +44,9 @@ class AdWebViewController: UIViewController {
         }
         webView.load(URLRequest(url: url))
     }
+    
+    deinit {
+        print("\(self) deinit")
+    }
+    
 }

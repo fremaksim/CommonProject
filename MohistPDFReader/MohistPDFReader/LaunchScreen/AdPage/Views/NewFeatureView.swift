@@ -16,8 +16,18 @@ public class NewFeatureView: UIView {
     
     let viewModel: NewFeatureViewModel
     
-    // 定时器
-    fileprivate var timer: Timer?
+    // 自动滚动定时器
+    fileprivate var autoScrollTimer: Timer?
+    
+    fileprivate var countDownTimer: Timer?
+    
+    // 定时时间
+    fileprivate var seconds: Int? {
+        didSet {
+            guard let timer = self.countDownTimer else { return }
+            RunLoop.main.add(timer, forMode: .common)
+        }
+    }
     
     lazy var continusButton: UIButton  = {
         let button = UIButton(type: .custom)
@@ -27,19 +37,19 @@ public class NewFeatureView: UIView {
     }()
     
     lazy var loop: Int = {
-        return viewModel.imageCount * 100000 * 2
+        return viewModel.loop
     }()
     
     lazy var pageControl: UIPageControl = {
         
-        let width: CGFloat = 5.0 * CGFloat(viewModel.imageCount)
+        let width: CGFloat = 5.0 * CGFloat(viewModel.numberOfPages)
         let height: CGFloat = 10
         var bottom: CGFloat =  30
         if isIPhoneXSeries() {
             bottom +=  83
         }
         let pageControl = UIPageControl(frame: CGRect(x: (screenWidth - width) * 0.5, y: screenHeight - bottom, width: width, height: height))
-        pageControl.numberOfPages  = viewModel.imageCount
+        pageControl.numberOfPages  = viewModel.numberOfPages
         pageControl.currentPage = 0
         pageControl.pageIndicatorTintColor = UIColor.purple
         pageControl.currentPageIndicatorTintColor = UIColor.red
@@ -83,9 +93,13 @@ public class NewFeatureView: UIView {
     
     fileprivate var dismissCallback: ( () -> Void )?
     
-    public static func show(on view: UIView? = nil,viewModel: NewFeatureViewModel, dissmissCallback: @escaping( () ->() )){
+    fileprivate var touchCallback: ((String?) -> ())?
+    
+    public static func show(on view: UIView? = nil,viewModel: NewFeatureViewModel, touchCallback: @escaping ((String?) -> ()), dissmissCallback: @escaping( () ->() )){
+        
         let newFeatureView = NewFeatureView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight), viewModel: viewModel)
         newFeatureView.dismissCallback = dissmissCallback
+        newFeatureView.touchCallback   = touchCallback
         
         if view == nil {
             guard let keyWindow = UIApplication.shared.keyWindow else {
@@ -95,15 +109,15 @@ public class NewFeatureView: UIView {
         }else {
             view!.addSubview(newFeatureView)
         }
+    }
+    
+    private func addAutoScrollTimer() {
+        self.autoScrollTimer = Timer.scheduledTimer(timeInterval:3.0, target: self, selector: #selector(autoScrollTimerAction), userInfo: nil, repeats: true)
+        RunLoop.current.add(autoScrollTimer!, forMode: .common)
         
     }
     
-    private func addTimer() {
-        self.timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerCountDown), userInfo: nil, repeats: true)
-        RunLoop.current.add(timer!, forMode: .common)
-    }
-    
-    @objc private func timerCountDown() {
+    @objc private func autoScrollTimerAction() {
         
         let page = 0
         let offsetX = CGFloat((page + 1)) * self.bounds.size.width
@@ -111,16 +125,36 @@ public class NewFeatureView: UIView {
         
         
         self.collectionView.setContentOffset(offset, animated: true)
-        
     }
     
-    private func removerTimer(){
-        self.timer?.invalidate()
-        self.timer = nil
+    private func addCountDownTimer() {
+        self.countDownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countDownTimerAction), userInfo: nil, repeats: true)
+        skipButton.setTitle("跳过广告\(viewModel.countDownTime ?? 3)s", for: .normal)
+        //        RunLoop.current.add(autoScrollTimer!, forMode: .common)
+        self.seconds = viewModel.countDownTime
+    }
+    
+    @objc private func countDownTimerAction() {
+        guard var seconds = self.seconds else { return }
+        seconds -= 1
+        self.seconds = seconds
+        skipButton.setTitle("跳过广告\(seconds)s", for: .normal)
+        if seconds == 0 { skipButtonAction() }
+    }
+    
+    @objc private func removeCountDownTimer(){
+        self.countDownTimer?.invalidate()
+        self.countDownTimer = nil
+    }
+    
+    private func removerAutoScrollTimer(){
+        self.autoScrollTimer?.invalidate()
+        self.autoScrollTimer = nil
     }
     
     deinit {
-        self.removerTimer()
+        self.removerAutoScrollTimer()
+        self.removeCountDownTimer()
     }
     
     
@@ -134,15 +168,22 @@ public class NewFeatureView: UIView {
         
         addSubview(continusButton)
         
-        addSubview(pageControl)
+        if !viewModel.isPageControlHidden {
+            addSubview(pageControl)
+            self.collectionView.scrollToItem(at: IndexPath(item: loop / 2, section: 0), at: .centeredHorizontally, animated: true)
+        }
         
+        if viewModel.isTimerAutoScrolling {
+            addAutoScrollTimer()
+        }
         
-        self.collectionView.scrollToItem(at: IndexPath(item: loop / 2, section: 0), at: .centeredHorizontally, animated: true)
-        
+        if viewModel.showTimerCountDown {
+            addCountDownTimer()
+        }
         
         
         //layout
-        let buttonWidth: CGFloat  = 60
+        let buttonWidth: CGFloat  = 80
         let buttonHeight: CGFloat = 30
         
         
@@ -155,7 +196,7 @@ public class NewFeatureView: UIView {
             
             ])
         
-        addTimer()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -165,7 +206,8 @@ public class NewFeatureView: UIView {
     //MARK: --- Event Response
     @objc fileprivate func skipButtonAction() {
         
-        removerTimer()
+        removeCountDownTimer()
+        removerAutoScrollTimer()
         
         UIView.animate(withDuration: 0.25, animations: {
             self.alpha = 0
@@ -197,17 +239,28 @@ public class NewFeatureView: UIView {
 extension NewFeatureView: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.imageCount * loop
+        return viewModel.numberOfPages * loop
     }
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewFeatureImageCell.reuseIdentifier, for: indexPath) as! NewFeatureImageCell
-        if let images = viewModel.images {
-            cell.pictureView.image = images[indexPath.item % viewModel.imageCount]
-        }else if let imageUrls = viewModel.imageUrls {
-            cell.pictureView.kf.setImage(with: URL(string: imageUrls[indexPath.item]))
+        
+        if viewModel.isShortVideo {
+            collectionView.backgroundColor = .clear
+            cell.contentView.backgroundColor = .clear
+            cell.backgroundColor             = .clear
+            cell.pictureView.image           = nil
+            
         }else {
-            cell.pictureView.image = nil
+            if let images = viewModel.imageNames {
+                let imageName = images[indexPath.item % viewModel.numberOfPages]
+                cell.pictureView.image = UIImage(named: imageName)
+            }else if let imageUrls = viewModel.imageURLs {
+                cell.pictureView.kf.setImage(with: URL(string: imageUrls[indexPath.item % viewModel.numberOfPages]))
+            }else {
+                cell.pictureView.image = nil
+            }
         }
+        
         return cell
     }
 }
@@ -216,23 +269,30 @@ extension NewFeatureView: UICollectionViewDelegate {
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        guard let webURLs = viewModel.webURLs else { return }
+        let webURL = webURLs[indexPath.item % viewModel.numberOfPages]
+        guard viewModel.validWebURL(webURL: webURL) else { return }
+        
+        skipButtonAction()
+        // web 跳转
+        touchCallback?(webURL)
     }
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let scrollWidth = collectionView.bounds.size.width
         let number = scrollView.contentOffset.x / scrollWidth
-        let page =  Int(round(number)) % viewModel.imageCount
+        let page =  Int(round(number)) % viewModel.numberOfPages
         pageControl.currentPage = page
         
     }
     
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        removerTimer()
+        removerAutoScrollTimer()
     }
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        addTimer()
+        addAutoScrollTimer()
     }
 }
 
@@ -244,6 +304,7 @@ public class NewFeatureImageCell: UICollectionViewCell {
     // Properties
     var pictureView: UIImageView = {
         let imageView = UIImageView()
+        imageView.isUserInteractionEnabled = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

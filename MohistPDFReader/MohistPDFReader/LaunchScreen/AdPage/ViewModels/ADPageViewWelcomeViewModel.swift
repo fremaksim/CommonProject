@@ -16,11 +16,13 @@ public class ADPageViewWelcomeViewModel {
     
     public let guideType: GuideType
     
-    public let contentType: AdPageContentType
-
-    init(guideType: GuideType, contenType: AdPageContentType) {
+    public let page: AdPage
+    
+    init(guideType: GuideType, page: AdPage) {
+        
         self.guideType   = guideType
-        self.contentType = contenType
+        self.page        = page
+        
     }
     
     

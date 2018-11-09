@@ -27,13 +27,6 @@ class ViewController: UIViewController {
         return tableView
     }()
     
-    //    let  pageViewWelcomeViewModel = ADPageViewWelcomeViewModel(guideType: .welcome, contenType: .multiImages)
-    
-    //    lazy var adPageViewController: ADPageWelcomeViewController = {
-    //        let adPageViewController = ADPageWelcomeViewController(viewModel: pageViewWelcomeViewModel)
-    //        return adPageViewController
-    //    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,21 +55,28 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        var  pageViewWelcomeViewModel = ADPageViewWelcomeViewModel(guideType: .welcome, contenType: .multiImages)
+        var  pageViewWelcomeViewModel = ADPageViewWelcomeViewModel(guideType: .welcome, page: AdPage.testPage(type: .multiImages))
         switch indexPath.row {
         case 0:
-            pageViewWelcomeViewModel = ADPageViewWelcomeViewModel(guideType: .welcome, contenType: .multiImages)
+            pageViewWelcomeViewModel = ADPageViewWelcomeViewModel(guideType: .welcome, page: AdPage.testPage(type: .multiImages))
         case 1:
-            pageViewWelcomeViewModel = ADPageViewWelcomeViewModel(guideType: .ad, contenType: .singleImage)
+            pageViewWelcomeViewModel = ADPageViewWelcomeViewModel(guideType: .ad, page: AdPage.testPage(type: .singleImage))
         case 2:
-            pageViewWelcomeViewModel = ADPageViewWelcomeViewModel(guideType: .ad, contenType: .multiImages)
+            pageViewWelcomeViewModel = ADPageViewWelcomeViewModel(guideType: .ad, page: AdPage.testPage(type: .multiImages))
         case 3:
-            pageViewWelcomeViewModel = ADPageViewWelcomeViewModel(guideType: .ad, contenType: .shortVideo)
+            pageViewWelcomeViewModel = ADPageViewWelcomeViewModel(guideType: .ad, page: AdPage.testPage(type: .shortVideo))
         default:
             print(indexPath.row)
         }
         
-        let adPageViewController = ADPageWelcomeViewController(viewModel: pageViewWelcomeViewModel)
+        let adPageViewController = ADPageWelcomeViewController(viewModel: pageViewWelcomeViewModel) { [weak self] (webURL) in
+            let adWeb = AdWeb()
+            adWeb.url = webURL
+            let webViewModel = AdWebViewModel(adWeb: adWeb)
+            let webViewController = AdWebViewController(viewModel: webViewModel)
+            
+            self?.navigationController?.pushViewController(webViewController, animated: true)
+        }
         
         addChild(adPageViewController)
         adPageViewController.view.bounds = UIScreen.main.bounds

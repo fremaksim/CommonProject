@@ -15,7 +15,8 @@ public class ADPageWelcomeViewController: UIViewController {
     
     private lazy var  avPlayerViewController: AVPlayerViewController = {
         let vc = AVPlayerViewController()
-        if let url = Bundle.main.url(forResource: "keep", withExtension: "mp4") {
+        //TODO: -- 不应该取 first
+        if let url = viewModel.page.pageItems?.first?.videoURL{
             let player = AVPlayer(url: url)
             vc.player = player
             vc.showsPlaybackControls = false
@@ -25,9 +26,12 @@ public class ADPageWelcomeViewController: UIViewController {
         return vc
     }()
     
+    fileprivate var touchCallback: ((String?) -> ())?
+    
     //MARK: --- Life Cycle
-    init(viewModel: ADPageViewWelcomeViewModel) {
+    init(viewModel: ADPageViewWelcomeViewModel, touchCallback: @escaping((String?) -> ())) {
         self.viewModel = viewModel
+        self.touchCallback = touchCallback
         super.init(nibName: nil, bundle: nil)
         
     }
@@ -40,12 +44,7 @@ public class ADPageWelcomeViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        switch viewModel.guideType {
-        case .ad:
-            self.loadAdViewStyle()
-        case .welcome:
-            self.loadWelcomeViewStyle()
-        }
+        loadWelcomeViewStyle()
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +59,7 @@ public class ADPageWelcomeViewController: UIViewController {
     }
     
     deinit {
-        
+        print("\(self) deinit")
     }
     
     //MARK: --- Prive Methods
@@ -76,7 +75,7 @@ public class ADPageWelcomeViewController: UIViewController {
     // 广告 样式
     private func loadAdViewStyle(){
         
-        switch viewModel.contentType {
+        switch viewModel.page.contentType {
             
         case .singleImage:
             print("ad -- singleImage")
@@ -89,13 +88,11 @@ public class ADPageWelcomeViewController: UIViewController {
             print("ad -- welcom -- heihei")
         }
         
-        loadUserInteractiveView()
-        
     }
     // 欢迎样式
     private func loadWelcomeViewStyle(){
         
-        switch viewModel.contentType {
+        switch viewModel.page.contentType {
         case .singleImage:
             print("ad -- singleImage")
         case .multiImages:
@@ -106,7 +103,6 @@ public class ADPageWelcomeViewController: UIViewController {
         case .welcome:
             print("ad -- welcom -- heihei")
         }
-        //        loadVideoPlayer()
         loadNewFeatureView()
     }
     
@@ -119,37 +115,15 @@ public class ADPageWelcomeViewController: UIViewController {
         
     }
     
-    private func loadUserInteractiveView() {
-        
-        // 切换 type 单图，多图
-        let pageViewModel = AdPageViewModel(page: AdPage.testPage(type: viewModel.contentType))
-        
-        AdPageView.show(viewModel: pageViewModel, touchCallback: {  [weak self] (urlString) in
-            let adWeb = AdWeb()
-            adWeb.url = urlString
-            let webViewModel = AdWebViewModel(adWeb: adWeb)
-            let webViewController = AdWebViewController(viewModel: webViewModel)
-            
-            self?.navigationController?.pushViewController(webViewController, animated: true)
-            
-        }) { [weak self] in
-            
-            self?.removeSelf()
-        }
-    }
-    
     private func loadNewFeatureView(){
         
-        var images: [UIImage] = []
-        for i in 0..<6 {
-            if let image = UIImage(named: "IMG_07\(77 + i)") {
-                images.append(image)
-            }
-        }
         
-        let newFeatureModel = NewFeatureViewModel(images: images)
         
-        NewFeatureView.show(viewModel: newFeatureModel) {
+        let newFeatureModel = NewFeatureViewModel(type: viewModel.guideType ,page: viewModel.page)
+        
+        NewFeatureView.show(viewModel: newFeatureModel, touchCallback: { [weak self] webURL in
+            self?.touchCallback?(webURL)
+        }) {
             [weak self] in
             self?.removeSelf()
         }

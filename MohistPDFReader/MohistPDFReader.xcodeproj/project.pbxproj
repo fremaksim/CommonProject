@@ -20,9 +20,7 @@
 		6AF3B80B2192815400913CA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AF3B80A2192815400913CA9 /* Assets.xcassets */; };
 		6AF3B80E2192815400913CA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF3B80C2192815400913CA9 /* LaunchScreen.storyboard */; };
 		6AF3B821219291D400913CA9 /* UIImage+LaunchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B820219291D400913CA9 /* UIImage+LaunchImage.swift */; };
-		6AF3B8232192B3A700913CA9 /* AdPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B8222192B3A700913CA9 /* AdPageViewModel.swift */; };
 		6AF3B8262192B41500913CA9 /* AdPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B8252192B41500913CA9 /* AdPage.swift */; };
-		6AF3B8282192B43A00913CA9 /* AdPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B8272192B43A00913CA9 /* AdPageView.swift */; };
 		6AF3B82B2192D25E00913CA9 /* AdWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B82A2192D25E00913CA9 /* AdWebViewController.swift */; };
 		6AF3B82D2192D35100913CA9 /* AdWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B82C2192D35100913CA9 /* AdWebViewModel.swift */; };
 		6AF3B82F2192D35C00913CA9 /* AdWeb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B82E2192D35C00913CA9 /* AdWeb.swift */; };
@@ -46,9 +44,7 @@
 		6AF3B80D2192815400913CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6AF3B80F2192815400913CA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AF3B820219291D400913CA9 /* UIImage+LaunchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+LaunchImage.swift"; sourceTree = "<group>"; };
-		6AF3B8222192B3A700913CA9 /* AdPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPageViewModel.swift; sourceTree = "<group>"; };
 		6AF3B8252192B41500913CA9 /* AdPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPage.swift; sourceTree = "<group>"; };
-		6AF3B8272192B43A00913CA9 /* AdPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPageView.swift; sourceTree = "<group>"; };
 		6AF3B8292192BF2100913CA9 /* ADPage_README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ADPage_README.md; sourceTree = "<group>"; };
 		6AF3B82A2192D25E00913CA9 /* AdWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdWebViewController.swift; sourceTree = "<group>"; };
 		6AF3B82C2192D35100913CA9 /* AdWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdWebViewModel.swift; sourceTree = "<group>"; };
@@ -188,7 +184,6 @@
 		6AF3B81C21928C2600913CA9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6AF3B8272192B43A00913CA9 /* AdPageView.swift */,
 				6A18C6432193D96C009C1870 /* NewFeatureView.swift */,
 			);
 			path = Views;
@@ -207,7 +202,6 @@
 		6AF3B81E21928C4200913CA9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				6AF3B8222192B3A700913CA9 /* AdPageViewModel.swift */,
 				6AF3B82C2192D35100913CA9 /* AdWebViewModel.swift */,
 				6A18C64121930C4D009C1870 /* ADPageViewWelcomeViewModel.swift */,
 				6A5C5A192193EB3D00A197A1 /* NewFeatureViewModel.swift */,
@@ -367,8 +361,6 @@
 				6A18C6442193D96C009C1870 /* NewFeatureView.swift in Sources */,
 				6AF3B8262192B41500913CA9 /* AdPage.swift in Sources */,
 				6AF3B8062192815300913CA9 /* ViewController.swift in Sources */,
-				6AF3B8282192B43A00913CA9 /* AdPageView.swift in Sources */,
-				6AF3B8232192B3A700913CA9 /* AdPageViewModel.swift in Sources */,
 				6A18C640219308A7009C1870 /* ADPageWelcomeViewController.swift in Sources */,
 				6A5C5A1C2194299900A197A1 /* AppVersion.swift in Sources */,
 				6AF3B8042192815300913CA9 /* AppDelegate.swift in Sources */,
