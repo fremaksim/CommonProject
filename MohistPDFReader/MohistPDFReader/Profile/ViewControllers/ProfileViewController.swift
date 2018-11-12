@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol ProfileViewControllerDelegate: class {
+    func didClickLoginButton()
+}
+
 class ProfileViewController: UIViewController {
     
     fileprivate var viewModel: ProfileViewModel
+    weak var delegate: ProfileViewControllerDelegate?
 
     private lazy var loginButton: UIButton = {
         let btn = UIButton(type: .custom)
@@ -37,12 +42,17 @@ class ProfileViewController: UIViewController {
         title = viewModel.title
         view.backgroundColor = viewModel.backgroundColor
         
+        view.addSubview(loginButton)
+        loginButton.snp.makeConstraints { (make) in
+            make.left.equalTo(0)
+            make.top.equalTo(view.snp.top).offset(DeviceHelper.navigationBarMaxY)
+            make.size.equalTo(CGSize(width: 80, height: 30))
+        }
     }
     
     //MARK: --- Events Response
     @objc private func loginButtonAction(){
-        
+        delegate?.didClickLoginButton()
     }
-    
     
 }

@@ -10,8 +10,8 @@ import UIKit
 
 class SmsCodeViewController: UIViewController {
     
-    let phone: String
-    //    private let baseTag: Int = 10086
+    let viewModel: SmsViewModel
+    
     private var stack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
@@ -19,8 +19,8 @@ class SmsCodeViewController: UIViewController {
         return stack
     }()
     
-    init(phone: String) {
-        self.phone = phone
+    init(viewModel: SmsViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -30,18 +30,10 @@ class SmsCodeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
         
-        title = "输入短信验证码"
+        view.backgroundColor = viewModel.backgroundColor
+        title = viewModel.title
         
-        let codeview = SMSCodeView()
-        view.addSubview(codeview)
-        codeview.snp.makeConstraints { (make) in
-            make.left.equalTo(20)
-            make.right.equalTo(-20)
-            make.top.equalTo(100)
-            make.height.equalTo(40)
-        }
     }
     
     deinit {
@@ -49,30 +41,3 @@ class SmsCodeViewController: UIViewController {
     }
 }
 
-
-
-extension SmsCodeViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        // 前一个有数子，后一个才能成为第一响应者， 其余都不能。 只能响应后退键，（后退键 ，前一个文字删除，成为第一响应者）
-        
-        if textField.text?.count == 1 && !string.isBackspace() {
-            return false
-        }
-        
-        if let codeTextField = textField as? CodeTextField {
-            var currentTag = codeTextField.tag
-            while currentTag > CodeTextField.baseTag {
-                let preTag = currentTag - 1
-                currentTag -= 1
-                if let text = view.viewWithTag(preTag) as? CodeTextField, text.hasText, !textField.hasText {
-                    return true
-                }
-                return false
-            }
-        }
-        
-        return true
-    }
-    
-}

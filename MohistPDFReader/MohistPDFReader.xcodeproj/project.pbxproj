@@ -25,7 +25,6 @@
 		6A5C5A3F21957CAC00A197A1 /* ThirdLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A3E21957CAC00A197A1 /* ThirdLoginView.swift */; };
 		6A5C5A4221959F1D00A197A1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A4121959F1D00A197A1 /* StringExtension.swift */; };
 		6A5C5A442195ADAF00A197A1 /* SmsCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A432195ADAF00A197A1 /* SmsCodeViewController.swift */; };
-		6A5C5A462196680300A197A1 /* SMSCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A452196680300A197A1 /* SMSCodeView.swift */; };
 		6A5C5A48219682B300A197A1 /* ScanQRCodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A47219682B300A197A1 /* ScanQRCodeLoginViewController.swift */; };
 		6A5C5A4A2196AB5A00A197A1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A492196AB5A00A197A1 /* AppCoordinator.swift */; };
 		6A5C5A4D2196ABC200A197A1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A4C2196ABC200A197A1 /* Coordinator.swift */; };
@@ -45,6 +44,12 @@
 		6A5C5A7D2196CB6100A197A1 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A7C2196CB6100A197A1 /* ProfileViewModel.swift */; };
 		6A5C5A802196D17500A197A1 /* SignInSignupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A7F2196D17500A197A1 /* SignInSignupCoordinator.swift */; };
 		6A5C5A822196F11100A197A1 /* MohistSMSVerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A812196F11100A197A1 /* MohistSMSVerificationCodeView.swift */; };
+		6A5C5A842199508A00A197A1 /* SmsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A832199508A00A197A1 /* SmsViewModel.swift */; };
+		6A5C5A862199558D00A197A1 /* UIBarButtonItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A852199558D00A197A1 /* UIBarButtonItemExtension.swift */; };
+		6AF35408219964B000441752 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35407219964B000441752 /* UIView.swift */; };
+		6AF3540A2199658900441752 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF354092199658900441752 /* UIViewController.swift */; };
+		6AF3540C219965FF00441752 /* UIActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3540B219965FE00441752 /* UIActivityViewController.swift */; };
+		6AF3540E2199691500441752 /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3540D2199691500441752 /* DeviceHelper.swift */; };
 		6AF3B8042192815300913CA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B8032192815300913CA9 /* AppDelegate.swift */; };
 		6AF3B8062192815300913CA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B8052192815300913CA9 /* ViewController.swift */; };
 		6AF3B8092192815300913CA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF3B8072192815300913CA9 /* Main.storyboard */; };
@@ -80,7 +85,6 @@
 		6A5C5A3E21957CAC00A197A1 /* ThirdLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdLoginView.swift; sourceTree = "<group>"; };
 		6A5C5A4121959F1D00A197A1 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		6A5C5A432195ADAF00A197A1 /* SmsCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsCodeViewController.swift; sourceTree = "<group>"; };
-		6A5C5A452196680300A197A1 /* SMSCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeView.swift; sourceTree = "<group>"; };
 		6A5C5A47219682B300A197A1 /* ScanQRCodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRCodeLoginViewController.swift; sourceTree = "<group>"; };
 		6A5C5A492196AB5A00A197A1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		6A5C5A4C2196ABC200A197A1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -100,6 +104,12 @@
 		6A5C5A7C2196CB6100A197A1 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		6A5C5A7F2196D17500A197A1 /* SignInSignupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSignupCoordinator.swift; sourceTree = "<group>"; };
 		6A5C5A812196F11100A197A1 /* MohistSMSVerificationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MohistSMSVerificationCodeView.swift; sourceTree = "<group>"; };
+		6A5C5A832199508A00A197A1 /* SmsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsViewModel.swift; sourceTree = "<group>"; };
+		6A5C5A852199558D00A197A1 /* UIBarButtonItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtension.swift; sourceTree = "<group>"; };
+		6AF35407219964B000441752 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		6AF354092199658900441752 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		6AF3540B219965FE00441752 /* UIActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityViewController.swift; sourceTree = "<group>"; };
+		6AF3540D2199691500441752 /* DeviceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
 		6AF3B8002192815300913CA9 /* MohistPDFReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MohistPDFReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF3B8032192815300913CA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AF3B8052192815300913CA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +168,6 @@
 				6A5C5A3221955F9700A197A1 /* TypeTelephoneView.swift */,
 				6A5C5A812196F11100A197A1 /* MohistSMSVerificationCodeView.swift */,
 				6A5C5A3E21957CAC00A197A1 /* ThirdLoginView.swift */,
-				6A5C5A452196680300A197A1 /* SMSCodeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				6A5C5A2E21953C7100A197A1 /* LoginViewModel.swift */,
+				6A5C5A832199508A00A197A1 /* SmsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -509,8 +519,13 @@
 		6AF3B81F219291AD00913CA9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6AF3540B219965FE00441752 /* UIActivityViewController.swift */,
+				6AF354092199658900441752 /* UIViewController.swift */,
+				6AF35407219964B000441752 /* UIView.swift */,
 				6AF3B820219291D400913CA9 /* UIImage+LaunchImage.swift */,
 				6A5C5A4121959F1D00A197A1 /* StringExtension.swift */,
+				6A5C5A852199558D00A197A1 /* UIBarButtonItemExtension.swift */,
+				6AF3540D2199691500441752 /* DeviceHelper.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -646,8 +661,10 @@
 				"${PODS_ROOT}/Target Support Files/Pods-MohistPDFReader/Pods-MohistPDFReader-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Anatomy/Anatomy.framework",
+				"${BUILT_PRODUCTS_DIR}/Atributika/Atributika.framework",
 				"${BUILT_PRODUCTS_DIR}/EFQRCode/EFQRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
@@ -660,8 +677,10 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Anatomy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Atributika.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFQRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
@@ -696,9 +715,12 @@
 				6A5C5A6A2196B79900A197A1 /* ProfileViewController.swift in Sources */,
 				6A5C5A442195ADAF00A197A1 /* SmsCodeViewController.swift in Sources */,
 				6A18C640219308A7009C1870 /* ADPageWelcomeViewController.swift in Sources */,
+				6AF3540A2199658900441752 /* UIViewController.swift in Sources */,
 				6A5C5A352195619A00A197A1 /* TelephoneNationalCode.swift in Sources */,
+				6AF3540E2199691500441752 /* DeviceHelper.swift in Sources */,
 				6A5C5A1C2194299900A197A1 /* AppVersion.swift in Sources */,
 				6AF3B8042192815300913CA9 /* AppDelegate.swift in Sources */,
+				6A5C5A842199508A00A197A1 /* SmsViewModel.swift in Sources */,
 				6A5C5A5D2196B43900A197A1 /* InCoordinator.swift in Sources */,
 				6AF3B821219291D400913CA9 /* UIImage+LaunchImage.swift in Sources */,
 				6A5C5A48219682B300A197A1 /* ScanQRCodeLoginViewController.swift in Sources */,
@@ -709,14 +731,16 @@
 				6A5C5A2F21953C7100A197A1 /* LoginViewModel.swift in Sources */,
 				6A5C5A3D2195706700A197A1 /* R.generated.swift in Sources */,
 				6A5C5A752196BD8000A197A1 /* HomeViewController.swift in Sources */,
-				6A5C5A462196680300A197A1 /* SMSCodeView.swift in Sources */,
 				6A5C5A4221959F1D00A197A1 /* StringExtension.swift in Sources */,
 				6AF3B82D2192D35100913CA9 /* AdWebViewModel.swift in Sources */,
 				6AF3B82B2192D25E00913CA9 /* AdWebViewController.swift in Sources */,
 				6A5C5A1A2193EB3D00A197A1 /* NewFeatureViewModel.swift in Sources */,
+				6A5C5A862199558D00A197A1 /* UIBarButtonItemExtension.swift in Sources */,
 				6AF3B82F2192D35C00913CA9 /* AdWeb.swift in Sources */,
 				6A5C5A502196ACD200A197A1 /* NavigationController.swift in Sources */,
+				6AF3540C219965FF00441752 /* UIActivityViewController.swift in Sources */,
 				6A5C5A2D2195384E00A197A1 /* PrivateContact.m in Sources */,
+				6AF35408219964B000441752 /* UIView.swift in Sources */,
 				6A5C5A4D2196ABC200A197A1 /* Coordinator.swift in Sources */,
 				6A5C5A3F21957CAC00A197A1 /* ThirdLoginView.swift in Sources */,
 				6A5C5A542196AD7E00A197A1 /* Scrollable.swift in Sources */,
@@ -869,7 +893,6 @@
 			baseConfigurationReference = 36E967DBE0C4D835927B773E /* Pods-MohistPDFReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75J4834735;
@@ -893,7 +916,6 @@
 			baseConfigurationReference = 3FACAB42E016E5A0B73A8EDE /* Pods-MohistPDFReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75J4834735;

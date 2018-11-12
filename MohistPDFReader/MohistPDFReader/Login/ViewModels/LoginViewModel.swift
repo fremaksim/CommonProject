@@ -27,6 +27,11 @@ final class LoginViewModel {
     
     let loginTypes: [LogingType] = LogingType.allcase()
     
-    
+    var backgroundColor: UIColor {
+        return .white
+    }
+    var title: String {
+        return "手机号码登录"
+    }
 }
 

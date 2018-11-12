@@ -80,7 +80,7 @@ public class NavigationController: UIViewController {
         view.addSubview(childNavigationController.view)
         childNavigationController.didMove(toParent: self)
         
-        childNavigationController.view.translatesAutoresizingMaskIntoConstraints = false
+       childNavigationController.view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             childNavigationController.view.topAnchor.constraint(equalTo: view.topAnchor),
@@ -88,6 +88,7 @@ public class NavigationController: UIViewController {
             childNavigationController.view.rightAnchor.constraint(equalTo: view.rightAnchor),
             childNavigationController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             ])
+ 
     }
     
     // MARK: - Public

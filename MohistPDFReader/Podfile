@@ -15,6 +15,8 @@ target 'MohistPDFReader' do
   pod 'PromiseKit'
   pod 'QRCodeReader.swift', '~> 9.0.1'
   pod 'EFQRCode'
-  
+  pod 'MBProgressHUD'
+  # https://github.com/psharanda/Atributika
+  pod "Atributika"
 end
 

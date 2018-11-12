@@ -21,6 +21,7 @@ final class ProfileCoordinator: Coordinator {
     
     lazy var rootViewController: ProfileViewController = {
         let vc = ProfileViewController(viewModel: viewModel)
+        vc.delegate = self
         return vc
     }()
     
@@ -34,4 +35,12 @@ final class ProfileCoordinator: Coordinator {
     }
 
     
+}
+
+extension ProfileCoordinator: ProfileViewControllerDelegate {
+    func didClickLoginButton() {
+        let loginCoordinator = SignInSignupCoordinator(navigationController: navigationController)
+        loginCoordinator.start()
+        addCoordinator(loginCoordinator)
+    }
 }

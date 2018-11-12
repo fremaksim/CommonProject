@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import Atributika
 
+
+protocol SignInSignUpViewControllerDelegate: class {
+    func didClickVerificationCode(with phone: String)
+}
 
 class SignInSignupViewController: UIViewController {
     
-    //MARK: --- Life Cycle
+    weak var delegate: SignInSignUpViewControllerDelegate?
+    
     private let viewModel: LoginViewModel
     
     lazy var telephoneView: TypeTelephoneView = {
@@ -26,6 +32,7 @@ class SignInSignupViewController: UIViewController {
         return thirdView
     }()
     
+    //MARK: --- Life Cycle
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -37,9 +44,9 @@ class SignInSignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
         
-        title = "手机号码登录"
+        view.backgroundColor = viewModel.backgroundColor
+        title = viewModel.title
         
         loadViews()
     }
@@ -75,6 +82,48 @@ class SignInSignupViewController: UIViewController {
             make.bottom.equalTo(-70)
             make.height.equalTo(100)
         }
+        
+        let clickableLabel = AttributedLabel()
+        clickableLabel.numberOfLines = 2
+        clickableLabel.textAlignment = .center
+        
+        let clickableText = """
+ 同意<a>中国移动认证服务协议</a>
+ 登录即代表您同意<b>用户协议</b>和<c>隐私政策</c>
+ """
+        let all = Style.font(.systemFont(ofSize: 13)).foregroundColor(.black)
+        let linkA = Style("a").foregroundColor(.blue, .normal)
+            .foregroundColor(.green, .highlighted)
+        let linkB = Style("b").foregroundColor(.blue, .normal)
+            .foregroundColor(.green, .highlighted)
+        let linkC = Style("c").foregroundColor(.blue, .normal)
+            .foregroundColor(.green, .highlighted)
+        clickableLabel.attributedText = clickableText.style(tags: [linkA,linkB,linkC]).styleAll(all)
+        
+        clickableLabel.onClick = { label, detection in
+            switch detection.type {
+            case .tag(let tag):
+                if tag.name == "a" {
+                    UIApplication.shared.open(URL(string: "https://www.baidu.com")!, options: [:], completionHandler: nil)
+                }else if tag.name == "b"{
+                    UIApplication.shared.open(URL(string: "https://www.sina.com.cn")!, options: [:], completionHandler: nil)
+                }else if tag.name == "c"{
+                    UIApplication.shared.open(URL(string: "https://www.hao123.com")!, options: [:], completionHandler: nil)
+                }
+            default:
+                break
+            }
+            
+        }
+        clickableLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(clickableLabel)
+        clickableLabel.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.height.equalTo(42)
+            //            make.bottom.equalTo(-DeviceHelper.tabBarYDistanceBottom)
+            make.top.equalTo(thirdLoginView.snp.bottom).offset(4)
+        }
+        
     }
     
     fileprivate func viewResignFirstResponse(){
@@ -90,8 +139,7 @@ extension SignInSignupViewController: TypeTelephoneViewDelegate {
         let title = "发送短信给: " + phone
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         let action = UIAlertAction(title: "发送", style: .default) { [weak self](_) in
-            let vc = SmsCodeViewController(phone: phone)
-            self?.navigationController?.pushViewController(vc, animated: true)
+            self?.delegate?.didClickVerificationCode(with: phone)
         }
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
@@ -107,8 +155,10 @@ extension SignInSignupViewController: ThirdLoginViewProtocol {
         
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         let action = UIAlertAction(title: "确定", style: .default) { [weak self](_) in
-            let vc = ScanQRCodeLoginViewController()
-            self?.navigationController?.pushViewController(vc, animated: true)
+            if name == "扫码" {
+                let vc = ScanQRCodeLoginViewController()
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
         }
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
