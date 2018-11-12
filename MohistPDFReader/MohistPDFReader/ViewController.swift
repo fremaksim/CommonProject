@@ -10,12 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // welcome ads page
     let types = [
         "Welcome multiImages",
         
         "AD single image",
         "AD multiImages",
-        "AD short Video"
+        "AD short Video",
+        
+        "LoginIn"
     ]
     
     lazy var tableView: UITableView = {
@@ -27,16 +30,13 @@ class ViewController: UIViewController {
         return tableView
     }()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(tableView)
-        NSLayoutConstraint.activate([
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            ])
+        // 添加欢迎页
+        addWelcomeAdsSample()
         
     }
     
@@ -49,6 +49,27 @@ class ViewController: UIViewController {
         
     }
     
+    /// 欢迎页 广告页
+    private func  addWelcomeAdsSample(){
+        
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            ])
+        
+    }
+    
+    private func signinSignupSample(){
+        let vc = SignInSignupViewController(viewModel: LoginViewModel())
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    
+    
 }
 
 extension ViewController: UITableViewDelegate {
@@ -59,17 +80,28 @@ extension ViewController: UITableViewDelegate {
         switch indexPath.row {
         case 0:
             pageViewWelcomeViewModel = ADPageViewWelcomeViewModel(guideType: .welcome, page: AdPage.testPage(type: .multiImages))
+            addPageViewController(viewModel: pageViewWelcomeViewModel)
         case 1:
             pageViewWelcomeViewModel = ADPageViewWelcomeViewModel(guideType: .ad, page: AdPage.testPage(type: .singleImage))
+            addPageViewController(viewModel: pageViewWelcomeViewModel)
         case 2:
             pageViewWelcomeViewModel = ADPageViewWelcomeViewModel(guideType: .ad, page: AdPage.testPage(type: .multiImages))
+            addPageViewController(viewModel: pageViewWelcomeViewModel)
         case 3:
             pageViewWelcomeViewModel = ADPageViewWelcomeViewModel(guideType: .ad, page: AdPage.testPage(type: .shortVideo))
+            addPageViewController(viewModel: pageViewWelcomeViewModel)
+        case 4:
+            signinSignupSample()
         default:
             print(indexPath.row)
         }
         
-        let adPageViewController = ADPageWelcomeViewController(viewModel: pageViewWelcomeViewModel) { [weak self] (webURL) in
+        
+        
+    }
+    
+    private func addPageViewController(viewModel: ADPageViewWelcomeViewModel){
+        let adPageViewController = ADPageWelcomeViewController(viewModel: viewModel) { [weak self] (webURL) in
             let adWeb = AdWeb()
             adWeb.url = webURL
             let webViewModel = AdWebViewModel(adWeb: adWeb)
@@ -81,7 +113,6 @@ extension ViewController: UITableViewDelegate {
         addChild(adPageViewController)
         adPageViewController.view.bounds = UIScreen.main.bounds
         view.addSubview(adPageViewController.view)
-        
     }
     
 }

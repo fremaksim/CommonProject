@@ -1,0 +1,6 @@
+framework module Anatomy {
+  umbrella header "Anatomy-umbrella.h"
+
+  export *
+  module * { export * }
+}
