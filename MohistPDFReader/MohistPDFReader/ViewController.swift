@@ -125,9 +125,14 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! UITableViewCell
-        cell.textLabel?.text = types[indexPath.row]
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell"){
+            cell.textLabel?.text = types[indexPath.row]
+            return cell
+        }else{
+            let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+            cell.textLabel?.text = types[indexPath.row]
+            return cell
+        }
         
     }
 }

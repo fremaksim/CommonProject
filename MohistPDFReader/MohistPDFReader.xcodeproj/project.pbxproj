@@ -50,6 +50,24 @@
 		6AF3540A2199658900441752 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF354092199658900441752 /* UIViewController.swift */; };
 		6AF3540C219965FF00441752 /* UIActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3540B219965FE00441752 /* UIActivityViewController.swift */; };
 		6AF3540E2199691500441752 /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3540D2199691500441752 /* DeviceHelper.swift */; };
+		6AF35434219A5D4300441752 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF35433219A5D4300441752 /* SystemConfiguration.framework */; };
+		6AF35436219A5D7100441752 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF35435219A5D7100441752 /* libz.tbd */; };
+		6AF35438219A5D8700441752 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF35437219A5D8700441752 /* libsqlite3.0.tbd */; };
+		6AF3543A219A5D9900441752 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF35439219A5D9900441752 /* libc++.tbd */; };
+		6AF3543C219A5DA700441752 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF3543B219A5DA700441752 /* Security.framework */; };
+		6AF3543E219A5DAF00441752 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF3543D219A5DAF00441752 /* CFNetwork.framework */; };
+		6AF35441219A662600441752 /* ThirdParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35440219A662600441752 /* ThirdParty.swift */; };
+		6AF35447219A764100441752 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF35446219A764100441752 /* TencentOpenAPI.framework */; };
+		6AF35449219A7BC000441752 /* ThirdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35448219A7BC000441752 /* ThirdViewModel.swift */; };
+		6AF3544C219A9C8600441752 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3544B219A9C8600441752 /* LogManager.swift */; };
+		6AF3544E219AA65000441752 /* QQLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3544D219AA65000441752 /* QQLoginManager.swift */; };
+		6AF35450219AA96800441752 /* WechatLoginHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3544F219AA96800441752 /* WechatLoginHandle.swift */; };
+		6AF35453219ABBF800441752 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35452219ABBF800441752 /* PreferencesController.swift */; };
+		6AF35455219ABC2800441752 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35454219ABC2800441752 /* Storage.swift */; };
+		6AF35457219ABD3C00441752 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35456219ABD3C00441752 /* Keychain.swift */; };
+		6AF35459219ABD5E00441752 /* FileArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35458219ABD5E00441752 /* FileArchive.swift */; };
+		6AF3545B219ABD7A00441752 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3545A219ABD7A00441752 /* DataBase.swift */; };
+		6AF3545E219ACC5400441752 /* LoginStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3545D219ACC5400441752 /* LoginStorage.swift */; };
 		6AF3B8042192815300913CA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B8032192815300913CA9 /* AppDelegate.swift */; };
 		6AF3B8062192815300913CA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B8052192815300913CA9 /* ViewController.swift */; };
 		6AF3B8092192815300913CA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF3B8072192815300913CA9 /* Main.storyboard */; };
@@ -110,6 +128,24 @@
 		6AF354092199658900441752 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		6AF3540B219965FE00441752 /* UIActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityViewController.swift; sourceTree = "<group>"; };
 		6AF3540D2199691500441752 /* DeviceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
+		6AF35433219A5D4300441752 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6AF35435219A5D7100441752 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		6AF35437219A5D8700441752 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		6AF35439219A5D9900441752 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		6AF3543B219A5DA700441752 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6AF3543D219A5DAF00441752 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6AF35440219A662600441752 /* ThirdParty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdParty.swift; sourceTree = "<group>"; };
+		6AF35446219A764100441752 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		6AF35448219A7BC000441752 /* ThirdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewModel.swift; sourceTree = "<group>"; };
+		6AF3544B219A9C8600441752 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
+		6AF3544D219AA65000441752 /* QQLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QQLoginManager.swift; sourceTree = "<group>"; };
+		6AF3544F219AA96800441752 /* WechatLoginHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WechatLoginHandle.swift; sourceTree = "<group>"; };
+		6AF35452219ABBF800441752 /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
+		6AF35454219ABC2800441752 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		6AF35456219ABD3C00441752 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		6AF35458219ABD5E00441752 /* FileArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileArchive.swift; sourceTree = "<group>"; };
+		6AF3545A219ABD7A00441752 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
+		6AF3545D219ACC5400441752 /* LoginStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStorage.swift; sourceTree = "<group>"; };
 		6AF3B8002192815300913CA9 /* MohistPDFReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MohistPDFReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF3B8032192815300913CA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AF3B8052192815300913CA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +166,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AF3543E219A5DAF00441752 /* CFNetwork.framework in Frameworks */,
+				6AF35447219A764100441752 /* TencentOpenAPI.framework in Frameworks */,
+				6AF3543C219A5DA700441752 /* Security.framework in Frameworks */,
+				6AF3543A219A5D9900441752 /* libc++.tbd in Frameworks */,
+				6AF35438219A5D8700441752 /* libsqlite3.0.tbd in Frameworks */,
+				6AF35436219A5D7100441752 /* libz.tbd in Frameworks */,
+				6AF35434219A5D4300441752 /* SystemConfiguration.framework in Frameworks */,
 				6A5C5A31219546D000A197A1 /* CoreTelephony.framework in Frameworks */,
 				0B3DAFFD9543FBE7E89146C0 /* Pods_MohistPDFReader.framework in Frameworks */,
 			);
@@ -141,6 +184,13 @@
 		2BE52724170E67731D05CF9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6AF35446219A764100441752 /* TencentOpenAPI.framework */,
+				6AF3543D219A5DAF00441752 /* CFNetwork.framework */,
+				6AF3543B219A5DA700441752 /* Security.framework */,
+				6AF35439219A5D9900441752 /* libc++.tbd */,
+				6AF35437219A5D8700441752 /* libsqlite3.0.tbd */,
+				6AF35435219A5D7100441752 /* libz.tbd */,
+				6AF35433219A5D4300441752 /* SystemConfiguration.framework */,
 				6A5C5A30219546D000A197A1 /* CoreTelephony.framework */,
 				05235F12F5EF9434FEB1041E /* Pods_MohistPDFReader.framework */,
 			);
@@ -187,6 +237,7 @@
 			children = (
 				6A5C5A2E21953C7100A197A1 /* LoginViewModel.swift */,
 				6A5C5A832199508A00A197A1 /* SmsViewModel.swift */,
+				6AF35448219A7BC000441752 /* ThirdViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -380,6 +431,44 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		6AF3543F219A65F800441752 /* LoginConstant */ = {
+			isa = PBXGroup;
+			children = (
+				6AF35440219A662600441752 /* ThirdParty.swift */,
+				6AF3544D219AA65000441752 /* QQLoginManager.swift */,
+				6AF3544F219AA96800441752 /* WechatLoginHandle.swift */,
+			);
+			path = LoginConstant;
+			sourceTree = "<group>";
+		};
+		6AF3544A219A9C5C00441752 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				6AF3544B219A9C8600441752 /* LogManager.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		6AF35451219ABBC800441752 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				6AF35454219ABC2800441752 /* Storage.swift */,
+				6AF35452219ABBF800441752 /* PreferencesController.swift */,
+				6AF35456219ABD3C00441752 /* Keychain.swift */,
+				6AF35458219ABD5E00441752 /* FileArchive.swift */,
+				6AF3545A219ABD7A00441752 /* DataBase.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		6AF3545C219ACC4300441752 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				6AF3545D219ACC5400441752 /* LoginStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		6AF3B7F72192815300913CA9 = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +491,8 @@
 		6AF3B8022192815300913CA9 /* MohistPDFReader */ = {
 			isa = PBXGroup;
 			children = (
+				6AF35451219ABBC800441752 /* Storage */,
+				6AF3544A219A9C5C00441752 /* Log */,
 				6A5C5A782196C22700A197A1 /* Core */,
 				6A5C5A4E2196ACA800A197A1 /* UI */,
 				6A5C5A4B2196AB9400A197A1 /* Foundation */,
@@ -447,6 +538,8 @@
 		6AF3B8172192884300913CA9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				6AF3545C219ACC4300441752 /* Storage */,
+				6AF3543F219A65F800441752 /* LoginConstant */,
 				6A5C5A7E2196D08000A197A1 /* Coordinator */,
 				6A5C5A292195381500A197A1 /* Models */,
 				6A5C5A262195318700A197A1 /* ViewModels */,
@@ -672,6 +765,7 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -688,6 +782,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -707,8 +802,10 @@
 				6AF3B8262192B41500913CA9 /* AdPage.swift in Sources */,
 				6AF3B8062192815300913CA9 /* ViewController.swift in Sources */,
 				6A5C5A712196B9EB00A197A1 /* ProfileCoordinator.swift in Sources */,
+				6AF35449219A7BC000441752 /* ThirdViewModel.swift in Sources */,
 				6A5C5A6C2196B7C200A197A1 /* DiscoveryViewController.swift in Sources */,
 				6A5C5A732196BCCB00A197A1 /* DiscoveryCoordinator.swift in Sources */,
+				6AF35459219ABD5E00441752 /* FileArchive.swift in Sources */,
 				6A5C5A822196F11100A197A1 /* MohistSMSVerificationCodeView.swift in Sources */,
 				6A5C5A522196AD3900A197A1 /* TabBarController.swift in Sources */,
 				6A5C5A3321955F9700A197A1 /* TypeTelephoneView.swift in Sources */,
@@ -716,16 +813,20 @@
 				6A5C5A442195ADAF00A197A1 /* SmsCodeViewController.swift in Sources */,
 				6A18C640219308A7009C1870 /* ADPageWelcomeViewController.swift in Sources */,
 				6AF3540A2199658900441752 /* UIViewController.swift in Sources */,
+				6AF35455219ABC2800441752 /* Storage.swift in Sources */,
 				6A5C5A352195619A00A197A1 /* TelephoneNationalCode.swift in Sources */,
 				6AF3540E2199691500441752 /* DeviceHelper.swift in Sources */,
 				6A5C5A1C2194299900A197A1 /* AppVersion.swift in Sources */,
 				6AF3B8042192815300913CA9 /* AppDelegate.swift in Sources */,
+				6AF35441219A662600441752 /* ThirdParty.swift in Sources */,
 				6A5C5A842199508A00A197A1 /* SmsViewModel.swift in Sources */,
 				6A5C5A5D2196B43900A197A1 /* InCoordinator.swift in Sources */,
 				6AF3B821219291D400913CA9 /* UIImage+LaunchImage.swift in Sources */,
+				6AF35453219ABBF800441752 /* PreferencesController.swift in Sources */,
 				6A5C5A48219682B300A197A1 /* ScanQRCodeLoginViewController.swift in Sources */,
 				6A18C64221930C4D009C1870 /* ADPageViewWelcomeViewModel.swift in Sources */,
 				6A5C5A772196BDA500A197A1 /* HomeCoordinator.swift in Sources */,
+				6AF35450219AA96800441752 /* WechatLoginHandle.swift in Sources */,
 				6A5C5A592196B05600A197A1 /* WelcomeViewController.swift in Sources */,
 				6A5C5A4A2196AB5A00A197A1 /* AppCoordinator.swift in Sources */,
 				6A5C5A2F21953C7100A197A1 /* LoginViewModel.swift in Sources */,
@@ -737,11 +838,16 @@
 				6A5C5A1A2193EB3D00A197A1 /* NewFeatureViewModel.swift in Sources */,
 				6A5C5A862199558D00A197A1 /* UIBarButtonItemExtension.swift in Sources */,
 				6AF3B82F2192D35C00913CA9 /* AdWeb.swift in Sources */,
+				6AF35457219ABD3C00441752 /* Keychain.swift in Sources */,
+				6AF3544C219A9C8600441752 /* LogManager.swift in Sources */,
 				6A5C5A502196ACD200A197A1 /* NavigationController.swift in Sources */,
 				6AF3540C219965FF00441752 /* UIActivityViewController.swift in Sources */,
+				6AF3545B219ABD7A00441752 /* DataBase.swift in Sources */,
+				6AF3544E219AA65000441752 /* QQLoginManager.swift in Sources */,
 				6A5C5A2D2195384E00A197A1 /* PrivateContact.m in Sources */,
 				6AF35408219964B000441752 /* UIView.swift in Sources */,
 				6A5C5A4D2196ABC200A197A1 /* Coordinator.swift in Sources */,
+				6AF3545E219ACC5400441752 /* LoginStorage.swift in Sources */,
 				6A5C5A3F21957CAC00A197A1 /* ThirdLoginView.swift in Sources */,
 				6A5C5A542196AD7E00A197A1 /* Scrollable.swift in Sources */,
 				6A5C5A7D2196CB6100A197A1 /* ProfileViewModel.swift in Sources */,
@@ -896,11 +1002,97 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75J4834735;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/TencentOpenAPI.framework\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Anatomy/Anatomy.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Atributika/Atributika.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/EFQRCode/EFQRCode.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher/Kingfisher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Moya/Moya.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromiseKit/PromiseKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/QRCodeReader.swift/QRCodeReader.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library/Rswift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Result/Result.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwifterSwift/SwifterSwift.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/WechatOpenSDK\"",
+					"\"$(SRCROOT)/TencentOpenAPI.framework\"/**",
+					"\"$(SRCROOT)/TencentOpenAPI.framework/Headers\"/**",
+				);
 				INFOPLIST_FILE = MohistPDFReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/WechatOpenSDK/WeChatSDK1.8.3\"",
+					"\"$(SRCROOT)/\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-all_load",
+					"-l\"WeChatSDK\"",
+					"-l\"c++\"",
+					"-l\"sqlite3.0\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Anatomy\"",
+					"-framework",
+					"\"Atributika\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"EFQRCode\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"Moya\"",
+					"-framework",
+					"\"PromiseKit\"",
+					"-framework",
+					"\"QRCodeReader\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Result\"",
+					"-framework",
+					"\"Rswift\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"SwifterSwift\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-fobjc-arc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mozheanquan.MohistPDFReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -919,11 +1111,97 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75J4834735;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/TencentOpenAPI.framework\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Anatomy/Anatomy.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Atributika/Atributika.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/EFQRCode/EFQRCode.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher/Kingfisher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Moya/Moya.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromiseKit/PromiseKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/QRCodeReader.swift/QRCodeReader.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library/Rswift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Result/Result.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwifterSwift/SwifterSwift.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/WechatOpenSDK\"",
+					"\"$(SRCROOT)/TencentOpenAPI.framework\"/**",
+					"\"$(SRCROOT)/TencentOpenAPI.framework/Headers\"/**",
+				);
 				INFOPLIST_FILE = MohistPDFReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/WechatOpenSDK/WeChatSDK1.8.3\"",
+					"\"$(SRCROOT)/\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-all_load",
+					"-l\"WeChatSDK\"",
+					"-l\"c++\"",
+					"-l\"sqlite3.0\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Anatomy\"",
+					"-framework",
+					"\"Atributika\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"EFQRCode\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"Moya\"",
+					"-framework",
+					"\"PromiseKit\"",
+					"-framework",
+					"\"QRCodeReader\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Result\"",
+					"-framework",
+					"\"Rswift\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"SwifterSwift\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-fobjc-arc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mozheanquan.MohistPDFReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";

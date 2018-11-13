@@ -58,20 +58,15 @@ class InCoordinator: Coordinator {
         navigationController.setNavigationBarHidden(true, animated: false)
         
         
-        showTab()
+        //        showTab()
     }
     
-    
-    ///
     func showTab()  {
         guard let viewControllers = tabBarController?.viewControllers else { return }
         guard let nav = viewControllers[tabBarController!.selectedIndex] as? UINavigationController else { return }
         
         tabBarController?.selectedViewController = nav
         
-        print(UIApplication.shared.keyWindow)
-        print(nav.topViewController?.view)
-        print(tabBarController?.view.frame)
     }
     
     

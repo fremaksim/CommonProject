@@ -6,4 +6,10 @@
 //  Copyright © 2018 mozhe. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+final class ThirdViewModel {
+    var thirdPartys: [LogingType] = []
+    
+    
+}

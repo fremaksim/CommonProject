@@ -11,21 +11,35 @@ import UIKit
 
 
 public enum LogingType {
-    case phone,wechat,qq,qrcode
+    case phone,wechat,qq,qrcode,weibo
     
     static func allcase() -> [LogingType] {
         return [.phone, .wechat,.qq,.qrcode]
+    }
+    var description: String {
+        switch self {
+        case .phone:
+            return "手机号"
+        case .wechat:
+            return "微信"
+        case .qq:
+            return "QQ"
+        case .qrcode:
+            return "扫码"
+        case .weibo:
+            return "微博"
+        }
     }
     
 }
 
 final class LoginViewModel {
     
+    var loginTypes: [LogingType] = LogingType.allcase()
+    
     var localPhoneNumber: String? {
         return "+86 135***5230"
     }
-    
-    let loginTypes: [LogingType] = LogingType.allcase()
     
     var backgroundColor: UIColor {
         return .white

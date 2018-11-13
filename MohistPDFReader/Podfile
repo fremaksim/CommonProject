@@ -18,5 +18,8 @@ target 'MohistPDFReader' do
   pod 'MBProgressHUD'
   # https://github.com/psharanda/Atributika
   pod "Atributika"
+  pod 'WechatOpenSDK'
+  pod 'SwiftyBeaver'
+  
 end
 

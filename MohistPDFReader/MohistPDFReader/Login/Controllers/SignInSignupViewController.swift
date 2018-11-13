@@ -9,7 +9,6 @@
 import UIKit
 import Atributika
 
-
 protocol SignInSignUpViewControllerDelegate: class {
     func didClickVerificationCode(with phone: String)
 }
@@ -120,7 +119,6 @@ class SignInSignupViewController: UIViewController {
         clickableLabel.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
             make.height.equalTo(42)
-            //            make.bottom.equalTo(-DeviceHelper.tabBarYDistanceBottom)
             make.top.equalTo(thirdLoginView.snp.bottom).offset(4)
         }
         
@@ -158,6 +156,20 @@ extension SignInSignupViewController: ThirdLoginViewProtocol {
             if name == "扫码" {
                 let vc = ScanQRCodeLoginViewController()
                 self?.navigationController?.pushViewController(vc, animated: true)
+            }else if name == "QQ"{
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+                let permissions = [kOPEN_PERMISSION_GET_USER_INFO, kOPEN_PERMISSION_GET_SIMPLE_USER_INFO]
+                appDelegate.tencentAuth.authorize(permissions)
+            }else if name == "微信" {
+                WechatLoginHandle.shared.sendWechatAuth(completion: { (userInfo, error) in
+                    guard let userInfo = userInfo else {
+                        if let error = error {
+                            LogManager.shared.log.error(error.localizedDescription)
+                        }
+                        return
+                    }
+                    LogManager.shared.log.info(userInfo)
+                })
             }
         }
         alert.addAction(action)

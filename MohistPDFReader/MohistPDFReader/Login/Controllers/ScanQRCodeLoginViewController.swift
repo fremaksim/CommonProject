@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 import QRCodeReader //https://github.com/yannickl/QRCodeReader.swift 可自定义显示模式
 import AVFoundation
 
