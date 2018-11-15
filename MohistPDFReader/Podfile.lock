@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.7.3)
   - Anatomy (0.0.3)
   - Atributika (4.6.7)
+  - Cache (5.2.0)
   - EFQRCode (4.4.0)
   - Kingfisher (4.10.1)
   - MBProgressHUD (1.1.0)
@@ -48,6 +49,7 @@ PODS:
 DEPENDENCIES:
   - Anatomy
   - Atributika
+  - Cache
   - EFQRCode
   - Kingfisher
   - MBProgressHUD
@@ -65,6 +67,7 @@ SPEC REPOS:
     - Alamofire
     - Anatomy
     - Atributika
+    - Cache
     - EFQRCode
     - Kingfisher
     - MBProgressHUD
@@ -83,6 +86,7 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   Anatomy: d00ad42e9cc2e7390422c2dca2139e33e0f6ff46
   Atributika: 01164ef4e8a0103c879f7499a7de8902385d8bf9
+  Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   EFQRCode: 831460e293d19445b946386efee1d3602bfa8be6
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
@@ -97,6 +101,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: ccfcdf85a04d429f1633f668650b0ce8020bda3a
   WechatOpenSDK: 3117412f8aafde4758cac1e8d20b93c67cafcfef
 
-PODFILE CHECKSUM: e37c60c0e053e2ced194202ebfcf7bde7218e3e4
+PODFILE CHECKSUM: 32625b25214eeac6192e4a62362a1453dfda426b
 
 COCOAPODS: 1.6.0.beta.2

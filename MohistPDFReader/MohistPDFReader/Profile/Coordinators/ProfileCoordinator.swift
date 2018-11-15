@@ -33,7 +33,7 @@ final class ProfileCoordinator: Coordinator {
     func start() {
         navigationController.viewControllers = [rootViewController]
     }
-
+    
     
 }
 
@@ -42,5 +42,13 @@ extension ProfileCoordinator: ProfileViewControllerDelegate {
         let loginCoordinator = SignInSignupCoordinator(navigationController: navigationController)
         loginCoordinator.start()
         addCoordinator(loginCoordinator)
+    }
+    
+    func didClickLogoutButton() {
+        navigationController.pushViewController(LogoutViewController(), animated: true)
+    }
+    
+    func didClickAboutButton() {
+        navigationController.pushViewController(AboutViewController(), animated: true)
     }
 }

@@ -26,6 +26,9 @@ final class LogManager {
         // or use this for JSON output: console.format = "$J"
         // https://docs.swiftybeaver.com/article/20-custom-format
         
+        /// uses colors compatible to Terminal instead of Xcode, default is false
+        //        console.useTerminalColors = false
+        
         // add the destinations to SwiftyBeaver
         log.addDestination(console)
         log.addDestination(file)

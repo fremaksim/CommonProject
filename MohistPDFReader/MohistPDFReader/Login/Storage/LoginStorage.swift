@@ -15,20 +15,20 @@ final class LoginStorage {
     static var didSavedAccessToken: Bool = false
     
     static func saveAccessTokenDict(_ dict: Any) {
-        Storage.shared.save(type: .preferences, value: dict, key: PreferenceOption.wechatAccessTokenDictionary.key)
+        MoStorage.shared.save(type: .preferences, value: dict, key: PreferenceOption.wechatAccessTokenDictionary.key)
         setTimerForAccessToken()
         didSavedAccessToken = true
     }
     static func getRefreshToken() -> String? {
-        let dict = Storage.shared.preferencesController.getValue(for: .wechatAccessTokenDictionary) as? [String: Any]
+        let dict = MoStorage.shared.preferencesController.getValue(for: .wechatAccessTokenDictionary) as? [String: Any]
         return dict?[PreferenceOption.wechatRefreshToken.key] as? String
     }
     static func getAccessTokenDict() -> [String: Any]? {
-        return Storage.shared.getValue(type: .preferences, for: PreferenceOption.wechatAccessTokenDictionary.key) as? [String: Any]
+        return MoStorage.shared.getValue(type: .preferences, for: PreferenceOption.wechatAccessTokenDictionary.key) as? [String: Any]
     }
     
     static private func setTimerForAccessToken(){
-        let preferencesController = Storage.shared.preferencesController
+        let preferencesController = MoStorage.shared.preferencesController
         let dict = preferencesController.getValue(for: .wechatAccessTokenDictionary) as? [String: Any]
         guard let expire = dict?[PreferenceOption.wechatAuthExpires.key] as? Int else {
             return
@@ -47,7 +47,7 @@ final class LoginStorage {
     @objc static private func removeAccessTokenDict(){
         expire =  expire - 1
         if expire == 0 {
-            let preferencesController = Storage.shared.preferencesController
+            let preferencesController = MoStorage.shared.preferencesController
             preferencesController.remove(for: PreferenceOption.wechatAccessTokenDictionary.key)
             preferencesController.timer?.invalidate()
             preferencesController.timer = nil

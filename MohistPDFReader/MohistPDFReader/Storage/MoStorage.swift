@@ -9,7 +9,7 @@
 import Foundation
 
 //
-enum StorageType{
+enum MoStorageType{
     case preferences
     case fileArchive
     case database
@@ -17,11 +17,11 @@ enum StorageType{
 }
 // key protocol
 //
-protocol StorageProtocol {}
-protocol StrorageCommonProtocol: StorageProtocol {
-  func save(type: StorageType, value: Any, key: String)
-  func getValue(type: StorageType,for key: String) -> Any?
-  func remove(type: StorageType,for key: String)
+protocol MoStorageProtocol {}
+protocol MoStrorageCommonProtocol: MoStorageProtocol {
+  func save(type: MoStorageType, value: Any, key: String)
+  func getValue(type: MoStorageType,for key: String) -> Any?
+  func remove(type: MoStorageType,for key: String)
 }
 
 
@@ -29,34 +29,34 @@ protocol StrorageCommonProtocol: StorageProtocol {
 
 
 // 存储类
-final class Storage: StrorageCommonProtocol {
+final class MoStorage: MoStrorageCommonProtocol {
 
-    static let shared = Storage()
+    static let shared = MoStorage()
     let preferencesController = PreferencesController()
     
-    func save(type: StorageType, value: Any, key: String) {
+    func save(type: MoStorageType, value: Any, key: String) {
         switch type {
         case .preferences:
             preferencesController.set(value: value, for: key)
         default:
-            let _ = Storage()
+            let _ = MoStorage()
         }
     }
-    func remove(type: StorageType, for key: String) {
+    func remove(type: MoStorageType, for key: String) {
         switch type {
         case .preferences:
             preferencesController.remove(for: key)
         default:
-            let _ = Storage()
+            let _ = MoStorage()
         }
     }
     
-    func getValue(type: StorageType, for key: String) -> Any? {
+    func getValue(type: MoStorageType, for key: String) -> Any? {
         switch type {
         case .preferences:
           return  preferencesController.getValue(for: key)
         default:
-            let _ = Storage()
+            let _ = MoStorage()
             return nil
         }
     }

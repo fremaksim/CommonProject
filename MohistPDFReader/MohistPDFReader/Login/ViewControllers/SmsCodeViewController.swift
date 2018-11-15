@@ -34,10 +34,21 @@ class SmsCodeViewController: UIViewController {
         view.backgroundColor = viewModel.backgroundColor
         title = viewModel.title
         
-    }
-    
-    deinit {
+        let rect =  CGRect(x: 20, y: 80, width: UIScreen.main.bounds.size.width - 40, height: 50)
+        let codeView = MohistSMSVerificationCodeView(frame: rect)
+        view.addSubview(codeView)
+        codeView.keyboardType = .decimalPad
+        codeView.codeCount = 6
+        codeView.callback = {  str in
+            print(str)
+        }
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
 }
 

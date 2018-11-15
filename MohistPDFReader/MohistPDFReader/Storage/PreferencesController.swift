@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class PreferencesController: StorageProtocol {
+final class PreferencesController: MoStorageProtocol {
     
     let userDefaults: UserDefaults
     

@@ -9,6 +9,22 @@
 import Foundation
 import UIKit
 
+
+enum ProfileConten: String, CaseIterable{
+    case about, login, logout
+    var type: String {
+        switch self {
+        case .about:
+            return "关于"
+        case .login:
+            return "登录\\注册"
+        case .logout:
+            return "退出登录"
+        }
+    }
+}
+
+
 final class ProfileViewModel: NSObject {
     
     var title: String {
@@ -18,7 +34,9 @@ final class ProfileViewModel: NSObject {
     var backgroundColor: UIColor {
         return .white
     }
-
     
+    var contents:[ProfileConten] {
+        return ProfileConten.allCases
+    }
     
 }

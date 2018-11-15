@@ -46,6 +46,10 @@
 		6A5C5A822196F11100A197A1 /* MohistSMSVerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A812196F11100A197A1 /* MohistSMSVerificationCodeView.swift */; };
 		6A5C5A842199508A00A197A1 /* SmsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A832199508A00A197A1 /* SmsViewModel.swift */; };
 		6A5C5A862199558D00A197A1 /* UIBarButtonItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A852199558D00A197A1 /* UIBarButtonItemExtension.swift */; };
+		6AD302AB219DA20D000BF9D6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD302AA219DA20D000BF9D6 /* AboutViewController.swift */; };
+		6AD302AD219DA22C000BF9D6 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD302AC219DA22C000BF9D6 /* AboutViewModel.swift */; };
+		6AD302AF219DA457000BF9D6 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD302AE219DA457000BF9D6 /* LogoutViewController.swift */; };
+		6AD302B1219DA468000BF9D6 /* LogoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD302B0219DA468000BF9D6 /* LogoutViewModel.swift */; };
 		6AF35408219964B000441752 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35407219964B000441752 /* UIView.swift */; };
 		6AF3540A2199658900441752 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF354092199658900441752 /* UIViewController.swift */; };
 		6AF3540C219965FF00441752 /* UIActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3540B219965FE00441752 /* UIActivityViewController.swift */; };
@@ -63,7 +67,7 @@
 		6AF3544E219AA65000441752 /* QQLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3544D219AA65000441752 /* QQLoginManager.swift */; };
 		6AF35450219AA96800441752 /* WechatLoginHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3544F219AA96800441752 /* WechatLoginHandle.swift */; };
 		6AF35453219ABBF800441752 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35452219ABBF800441752 /* PreferencesController.swift */; };
-		6AF35455219ABC2800441752 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35454219ABC2800441752 /* Storage.swift */; };
+		6AF35455219ABC2800441752 /* MoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35454219ABC2800441752 /* MoStorage.swift */; };
 		6AF35457219ABD3C00441752 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35456219ABD3C00441752 /* Keychain.swift */; };
 		6AF35459219ABD5E00441752 /* FileArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35458219ABD5E00441752 /* FileArchive.swift */; };
 		6AF3545B219ABD7A00441752 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3545A219ABD7A00441752 /* DataBase.swift */; };
@@ -124,6 +128,10 @@
 		6A5C5A812196F11100A197A1 /* MohistSMSVerificationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MohistSMSVerificationCodeView.swift; sourceTree = "<group>"; };
 		6A5C5A832199508A00A197A1 /* SmsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsViewModel.swift; sourceTree = "<group>"; };
 		6A5C5A852199558D00A197A1 /* UIBarButtonItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtension.swift; sourceTree = "<group>"; };
+		6AD302AA219DA20D000BF9D6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		6AD302AC219DA22C000BF9D6 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
+		6AD302AE219DA457000BF9D6 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		6AD302B0219DA468000BF9D6 /* LogoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewModel.swift; sourceTree = "<group>"; };
 		6AF35407219964B000441752 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		6AF354092199658900441752 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		6AF3540B219965FE00441752 /* UIActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +149,7 @@
 		6AF3544D219AA65000441752 /* QQLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QQLoginManager.swift; sourceTree = "<group>"; };
 		6AF3544F219AA96800441752 /* WechatLoginHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WechatLoginHandle.swift; sourceTree = "<group>"; };
 		6AF35452219ABBF800441752 /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
-		6AF35454219ABC2800441752 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		6AF35454219ABC2800441752 /* MoStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoStorage.swift; sourceTree = "<group>"; };
 		6AF35456219ABD3C00441752 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		6AF35458219ABD5E00441752 /* FileArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileArchive.swift; sourceTree = "<group>"; };
 		6AF3545A219ABD7A00441752 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
@@ -222,14 +230,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		6A5C5A252195318000A197A1 /* Controllers */ = {
+		6A5C5A252195318000A197A1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				6A5C5A27219531EF00A197A1 /* SignInSignupViewController.swift */,
 				6A5C5A432195ADAF00A197A1 /* SmsCodeViewController.swift */,
 				6A5C5A47219682B300A197A1 /* ScanQRCodeLoginViewController.swift */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		6A5C5A262195318700A197A1 /* ViewModels */ = {
@@ -364,6 +372,8 @@
 			isa = PBXGroup;
 			children = (
 				6A5C5A692196B79900A197A1 /* ProfileViewController.swift */,
+				6AD302AA219DA20D000BF9D6 /* AboutViewController.swift */,
+				6AD302AE219DA457000BF9D6 /* LogoutViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -379,6 +389,8 @@
 			isa = PBXGroup;
 			children = (
 				6A5C5A7C2196CB6100A197A1 /* ProfileViewModel.swift */,
+				6AD302AC219DA22C000BF9D6 /* AboutViewModel.swift */,
+				6AD302B0219DA468000BF9D6 /* LogoutViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -452,7 +464,7 @@
 		6AF35451219ABBC800441752 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				6AF35454219ABC2800441752 /* Storage.swift */,
+				6AF35454219ABC2800441752 /* MoStorage.swift */,
 				6AF35452219ABBF800441752 /* PreferencesController.swift */,
 				6AF35456219ABD3C00441752 /* Keychain.swift */,
 				6AF35458219ABD5E00441752 /* FileArchive.swift */,
@@ -543,7 +555,7 @@
 				6A5C5A7E2196D08000A197A1 /* Coordinator */,
 				6A5C5A292195381500A197A1 /* Models */,
 				6A5C5A262195318700A197A1 /* ViewModels */,
-				6A5C5A252195318000A197A1 /* Controllers */,
+				6A5C5A252195318000A197A1 /* ViewControllers */,
 				6A5C5A242195316E00A197A1 /* Views */,
 			);
 			path = Login;
@@ -755,6 +767,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Anatomy/Anatomy.framework",
 				"${BUILT_PRODUCTS_DIR}/Atributika/Atributika.framework",
+				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/EFQRCode/EFQRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
@@ -772,6 +785,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Anatomy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Atributika.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFQRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
@@ -802,6 +816,7 @@
 				6AF3B8262192B41500913CA9 /* AdPage.swift in Sources */,
 				6AF3B8062192815300913CA9 /* ViewController.swift in Sources */,
 				6A5C5A712196B9EB00A197A1 /* ProfileCoordinator.swift in Sources */,
+				6AD302AD219DA22C000BF9D6 /* AboutViewModel.swift in Sources */,
 				6AF35449219A7BC000441752 /* ThirdViewModel.swift in Sources */,
 				6A5C5A6C2196B7C200A197A1 /* DiscoveryViewController.swift in Sources */,
 				6A5C5A732196BCCB00A197A1 /* DiscoveryCoordinator.swift in Sources */,
@@ -813,7 +828,7 @@
 				6A5C5A442195ADAF00A197A1 /* SmsCodeViewController.swift in Sources */,
 				6A18C640219308A7009C1870 /* ADPageWelcomeViewController.swift in Sources */,
 				6AF3540A2199658900441752 /* UIViewController.swift in Sources */,
-				6AF35455219ABC2800441752 /* Storage.swift in Sources */,
+				6AF35455219ABC2800441752 /* MoStorage.swift in Sources */,
 				6A5C5A352195619A00A197A1 /* TelephoneNationalCode.swift in Sources */,
 				6AF3540E2199691500441752 /* DeviceHelper.swift in Sources */,
 				6A5C5A1C2194299900A197A1 /* AppVersion.swift in Sources */,
@@ -822,6 +837,7 @@
 				6A5C5A842199508A00A197A1 /* SmsViewModel.swift in Sources */,
 				6A5C5A5D2196B43900A197A1 /* InCoordinator.swift in Sources */,
 				6AF3B821219291D400913CA9 /* UIImage+LaunchImage.swift in Sources */,
+				6AD302AB219DA20D000BF9D6 /* AboutViewController.swift in Sources */,
 				6AF35453219ABBF800441752 /* PreferencesController.swift in Sources */,
 				6A5C5A48219682B300A197A1 /* ScanQRCodeLoginViewController.swift in Sources */,
 				6A18C64221930C4D009C1870 /* ADPageViewWelcomeViewModel.swift in Sources */,
@@ -846,12 +862,14 @@
 				6AF3544E219AA65000441752 /* QQLoginManager.swift in Sources */,
 				6A5C5A2D2195384E00A197A1 /* PrivateContact.m in Sources */,
 				6AF35408219964B000441752 /* UIView.swift in Sources */,
+				6AD302B1219DA468000BF9D6 /* LogoutViewModel.swift in Sources */,
 				6A5C5A4D2196ABC200A197A1 /* Coordinator.swift in Sources */,
 				6AF3545E219ACC5400441752 /* LoginStorage.swift in Sources */,
 				6A5C5A3F21957CAC00A197A1 /* ThirdLoginView.swift in Sources */,
 				6A5C5A542196AD7E00A197A1 /* Scrollable.swift in Sources */,
 				6A5C5A7D2196CB6100A197A1 /* ProfileViewModel.swift in Sources */,
 				6A5C5A7B2196C25300A197A1 /* InCoordinatorViewModel.swift in Sources */,
+				6AD302AF219DA457000BF9D6 /* LogoutViewController.swift in Sources */,
 				6A5C5A28219531EF00A197A1 /* SignInSignupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

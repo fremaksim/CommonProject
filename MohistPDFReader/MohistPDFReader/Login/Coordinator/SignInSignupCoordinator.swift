@@ -33,6 +33,7 @@ final class SignInSignupCoordinator: NSObject, Coordinator {
     
     func start() {
         loginViewController.navigationItem.backBarButtonItem = .back
+        loginViewController.hidesBottomBarWhenPushed = true
         navigationController.pushViewController(loginViewController, animated: true)
     }
     

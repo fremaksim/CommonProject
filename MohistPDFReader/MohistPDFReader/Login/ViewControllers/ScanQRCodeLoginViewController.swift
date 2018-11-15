@@ -133,4 +133,5 @@ extension ScanQRCodeLoginViewController: QRCodeReaderViewControllerDelegate{
         
         dismiss(animated: true, completion: nil)
     }
+    
 }

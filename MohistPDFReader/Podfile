@@ -19,7 +19,8 @@ target 'MohistPDFReader' do
   # https://github.com/psharanda/Atributika
   pod "Atributika"
   pod 'WechatOpenSDK'
-  pod 'SwiftyBeaver'
-  
+  pod 'SwiftyBeaver' 
+  pod 'Cache'
+#  pod 'GDPerformanceView-Swift', '~> 1.3.2'
 end
 

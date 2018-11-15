@@ -7,19 +7,34 @@
 //
 
 import UIKit
+//import GDPer
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    let log = LogManager.shared.log
+    private let log = LogManager.shared.log
     var window: UIWindow?
     var coordinator: AppCoordinator!
-    
     // qq 登录
     lazy var tencentAuth: TencentOAuth = {
         let auth = TencentOAuth(appId: ThirdParty(.qq).appIdKey.id, andDelegate: self)
         return auth!
     }()
+    // 3D Touch (Only available in (iOS 9 and iPhone6s) +)
+    private var launchedShortcutItem: UIApplicationShortcutItem?
+    private  enum ShortcutIdentifier: String {
+        case first
+        case second
+        
+        init?(fullNameForType: String) {
+            guard let last = fullNameForType.components(separatedBy: ".").last else { return nil }
+            self.init(rawValue: last)
+        }
+        var type: String {
+            return Bundle.main.bundleIdentifier! + "." + self.rawValue
+        }
+        
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -29,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coordinator.start()
         
         registerWeiXinAPI()
+        
+        threeDimensionalTouch(launchOptions)
         
         return true
     }
@@ -49,6 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        threeDimensionalTouchAppBecomeActive()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
@@ -152,6 +171,58 @@ extension AppDelegate {
         return true
     }
     
-    
 }
 
+//MARK: --- 3D Touch
+extension AppDelegate {
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        
+        completionHandler(handleShortcut(shortcutItem))
+    }
+    
+    
+    /// 3D Touch
+    ///
+    /// - Parameter launchOptions: launchOptions
+    private func threeDimensionalTouch(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        
+        if let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+            launchedShortcutItem = shortcutItem
+        }
+    }
+    
+    private func threeDimensionalTouchAppBecomeActive() {
+        guard let shortcutItem = launchedShortcutItem else {
+            return
+        }
+        _ = handleShortcut(shortcutItem)
+        
+        // We make it nil after perfom/handle method call for that shortcutItem action
+        launchedShortcutItem = nil
+    }
+    
+    
+    private func handleShortcut(_ item: UIApplicationShortcutItem) -> Bool {
+        var handle = false
+        
+        // Verify that the provided shortcutItem's type is one handled by the application.
+        guard ShortcutIdentifier(fullNameForType: item.type) != nil  else { return false }
+        guard let shortcutType = item.type as String? else { return false }
+        
+        switch shortcutType {
+        case ShortcutIdentifier.first.type: //Login
+            print(shortcutType) //跳转到相应的VC
+            handle = true
+        case ShortcutIdentifier.second.type: //
+            print(shortcutType) //跳转到相应的VC
+            handle = true
+        default:
+            handle = false
+        }
+        
+        return handle
+        
+    }
+    
+}

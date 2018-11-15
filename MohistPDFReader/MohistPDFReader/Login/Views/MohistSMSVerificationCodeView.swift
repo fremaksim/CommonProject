@@ -153,6 +153,8 @@ open class MohistSMSVerificationCodeView: UIView {
         }
         stackView.addArrangedSubviews(subStacks)
         
+        // Response To User interface
+        containerView.bringSubviewToFront(textView)
     }
     
     private func opacityAnimation() -> CABasicAnimation {
@@ -195,6 +197,8 @@ extension MohistSMSVerificationCodeView: UITextViewDelegate {
             text = String(text[startIndex...endIndex])
             endEdit()
         }
+        // make textView.text.count = codeCount
+        textView.text = text
         
         callback?(text)
         
