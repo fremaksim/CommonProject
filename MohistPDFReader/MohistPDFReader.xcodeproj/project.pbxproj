@@ -50,6 +50,7 @@
 		6AD302AD219DA22C000BF9D6 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD302AC219DA22C000BF9D6 /* AboutViewModel.swift */; };
 		6AD302AF219DA457000BF9D6 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD302AE219DA457000BF9D6 /* LogoutViewController.swift */; };
 		6AD302B1219DA468000BF9D6 /* LogoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD302B0219DA468000BF9D6 /* LogoutViewModel.swift */; };
+		6AD302B3219E59CB000BF9D6 /* TableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD302B2219E59CB000BF9D6 /* TableViewCellExtension.swift */; };
 		6AF35408219964B000441752 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF35407219964B000441752 /* UIView.swift */; };
 		6AF3540A2199658900441752 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF354092199658900441752 /* UIViewController.swift */; };
 		6AF3540C219965FF00441752 /* UIActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3540B219965FE00441752 /* UIActivityViewController.swift */; };
@@ -132,6 +133,7 @@
 		6AD302AC219DA22C000BF9D6 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		6AD302AE219DA457000BF9D6 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		6AD302B0219DA468000BF9D6 /* LogoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewModel.swift; sourceTree = "<group>"; };
+		6AD302B2219E59CB000BF9D6 /* TableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellExtension.swift; sourceTree = "<group>"; };
 		6AF35407219964B000441752 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		6AF354092199658900441752 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		6AF3540B219965FE00441752 /* UIActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityViewController.swift; sourceTree = "<group>"; };
@@ -631,6 +633,7 @@
 				6A5C5A4121959F1D00A197A1 /* StringExtension.swift */,
 				6A5C5A852199558D00A197A1 /* UIBarButtonItemExtension.swift */,
 				6AF3540D2199691500441752 /* DeviceHelper.swift */,
+				6AD302B2219E59CB000BF9D6 /* TableViewCellExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -841,6 +844,7 @@
 				6AF35453219ABBF800441752 /* PreferencesController.swift in Sources */,
 				6A5C5A48219682B300A197A1 /* ScanQRCodeLoginViewController.swift in Sources */,
 				6A18C64221930C4D009C1870 /* ADPageViewWelcomeViewModel.swift in Sources */,
+				6AD302B3219E59CB000BF9D6 /* TableViewCellExtension.swift in Sources */,
 				6A5C5A772196BDA500A197A1 /* HomeCoordinator.swift in Sources */,
 				6AF35450219AA96800441752 /* WechatLoginHandle.swift in Sources */,
 				6A5C5A592196B05600A197A1 /* WelcomeViewController.swift in Sources */,
