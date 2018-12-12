@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import GDPer
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -53,21 +52,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        
+        log.info("WillResignActive")
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        log.info("DidEnterBackground")
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        log.info("WillEnterForeground")
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
+        log.info("DidBecomeActive")
+        
         threeDimensionalTouchAppBecomeActive()
+        
+        loadADWelcomePage()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
@@ -171,6 +179,30 @@ extension AppDelegate {
         return true
     }
     
+}
+
+//MARK: - AD、Welecome
+extension AppDelegate {
+    
+    fileprivate func  loadADWelcomePage(){
+        let isShow = true
+        if isShow {
+            guard let rootVC = window?.rootViewController as? NavigationController else { return }
+            let naviVC = rootVC.childNavigationController.topViewController
+            
+            let page = AdPage.testPage()
+            page.contentType = .singleImage
+            let adVC = ADPageWelcomeViewController(viewModel: ADPageViewWelcomeViewModel(guideType: .ad, page: page )) { [weak rootVC] (str) in
+                let adWeb = AdWeb(url: str)
+                let webViewModel = AdWebViewModel(adWeb: adWeb)
+                let webViewController = AdWebViewController(viewModel: webViewModel)
+                
+                rootVC?.childNavigationController.pushViewController(webViewController, animated: true)
+            }
+            naviVC?.addChild(adVC)
+            naviVC?.view.addSubview(adVC.view)
+        }
+    }
 }
 
 //MARK: --- 3D Touch

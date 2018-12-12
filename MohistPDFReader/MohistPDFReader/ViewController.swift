@@ -102,8 +102,7 @@ extension ViewController: UITableViewDelegate {
     
     private func addPageViewController(viewModel: ADPageViewWelcomeViewModel){
         let adPageViewController = ADPageWelcomeViewController(viewModel: viewModel) { [weak self] (webURL) in
-            let adWeb = AdWeb()
-            adWeb.url = webURL
+            let adWeb = AdWeb(url: webURL)
             let webViewModel = AdWebViewModel(adWeb: adWeb)
             let webViewController = AdWebViewController(viewModel: webViewModel)
             

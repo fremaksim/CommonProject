@@ -273,9 +273,10 @@ extension NewFeatureView: UICollectionViewDelegate {
         let webURL = webURLs[indexPath.item % viewModel.numberOfPages]
         guard viewModel.validWebURL(webURL: webURL) else { return }
         
-        skipButtonAction()
         // web 跳转
         touchCallback?(webURL)
+        
+        skipButtonAction()
     }
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {

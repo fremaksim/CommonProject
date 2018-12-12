@@ -15,7 +15,7 @@ public class ADPageWelcomeViewController: UIViewController {
     
     private lazy var  avPlayerViewController: AVPlayerViewController = {
         let vc = AVPlayerViewController()
-        //TODO: -- 不应该取 first
+        //TODO: -  get first is not right
         if let url = viewModel.page.pageItems?.first?.videoURL{
             let player = AVPlayer(url: url)
             vc.player = player
@@ -122,6 +122,7 @@ public class ADPageWelcomeViewController: UIViewController {
         let newFeatureModel = NewFeatureViewModel(type: viewModel.guideType ,page: viewModel.page)
         
         NewFeatureView.show(viewModel: newFeatureModel, touchCallback: { [weak self] webURL in
+            
             self?.touchCallback?(webURL)
         }) {
             [weak self] in
