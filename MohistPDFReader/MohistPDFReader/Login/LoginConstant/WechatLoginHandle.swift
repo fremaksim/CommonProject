@@ -27,7 +27,16 @@ final class WechatLoginHandle: NSObject {
     /// -> 拉起第三方应用或者重定向到第三方app
     /// -> 进入第二步
     /// - Parameter completion: 最终微信用户信息
-    func  sendWechatAuth(completion: @escaping(([String: Any]?, Error?) -> Void)){
+    func sendWechatAuth(completion: @escaping(([String: Any]?, Error?) -> Void)){
+        
+        // 检查有没有安装微信
+        if  !WXApi.isWXAppInstalled() {
+            log.error("wechat App not installed")
+            let error = NSError(domain: ThirdParty(.wechat).sourceApplicationKey, code: 0, userInfo: [ThirdParty(.wechat).sourceApplicationKey: "wechat not installed"])
+            completion(nil, error as Error)
+            return
+        }
+        
         //如果有 accessToken 则刷新 accessToken
         // 否则 请求
         if let accessTokenDict = LoginStorage.getAccessTokenDict(),
@@ -39,10 +48,15 @@ final class WechatLoginHandle: NSObject {
             let seq = SendAuthReq()
             seq.scope = "snsapi_userinfo"
             seq.state = String(Int.random(in: 0...1000))
-            WXApi.send(seq)
+            let result = WXApi.send(seq)
             observation = observe(\.userInfoToObserve.userInfo,options: [.old, .new]){ (objcet, change) in
                 //                log.info(change.newValue)
                 completion(change.newValue, nil)
+            }
+            if result {
+                log.info("wechat send yes")
+            }else{
+                log.error("wechat send error")
             }
         }
     }
@@ -74,7 +88,7 @@ final class WechatLoginHandle: NSObject {
     /// - Parameters:
     ///   - code: 临时票据
     ///   - completion: 最终用户信息 回调
-    private   func requestAccessToken(_ code: String, completion: @escaping(([String: Any]?, Error?) -> Void)) { // 异步子线程
+    private func requestAccessToken(_ code: String, completion: @escaping(([String: Any]?, Error?) -> Void)) { // 异步子线程
         // 第二步: 请求accessToken
         let urlStr = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=\(appId)&secret=\(appSecret)&code=\(code)&grant_type=authorization_code"
         
@@ -111,7 +125,7 @@ final class WechatLoginHandle: NSObject {
     /// - Parameters:
     ///   - accessTokenDict: access token 字典
     ///   - completion: 最终用户信息回调
-    private  func saveAccessTokenDictRequestUserInfo(accessTokenDict: [String: Any] ,completion: @escaping(([String: Any]?, Error?) -> Void)){
+    private func saveAccessTokenDictRequestUserInfo(accessTokenDict: [String: Any] ,completion: @escaping(([String: Any]?, Error?) -> Void)){
         
         // 存储 信息 // 设置定时 2小时 ，过期自动清除
         LoginStorage.saveAccessTokenDict(accessTokenDict)
@@ -134,7 +148,7 @@ final class WechatLoginHandle: NSObject {
     ///   - accessToken: access token
     ///   - openID: openid
     ///   - completion: 最终用户信息回调
-    private  func requestUserInfo(_ accessToken: String, openID: String, completion: @escaping(([String: Any]?, Error?) -> Void)) {
+    private func requestUserInfo(_ accessToken: String, openID: String, completion: @escaping(([String: Any]?, Error?) -> Void)) {
         
         let urlStr = "https://api.weixin.qq.com/sns/userinfo?access_token=\(accessToken)&openid=\(openID)"
         
@@ -169,7 +183,7 @@ final class WechatLoginHandle: NSObject {
     /// - Parameters:
     ///   - refreshAccessToken: refresh Token
     ///   - completion: 最终UserInfo 回调
-    private  func refreshAccessToken(refreshAccessToken: String,completion: @escaping(([String: Any]?, Error?) -> Void)) {
+    private func refreshAccessToken(refreshAccessToken: String,completion: @escaping(([String: Any]?, Error?) -> Void)) {
         guard let refreshToken = LoginStorage.getRefreshToken() else { return }
         let urlStr = "https://api.weixin.qq.com/sns/oauth2/refresh_token?appid=\(appId)&grant_type=refresh_token&refresh_token=\(refreshToken)"
         guard let url = URL(string: urlStr) else { return }
@@ -188,7 +202,6 @@ final class WechatLoginHandle: NSObject {
         }
     }
 }
-
 
 // for 键值观察
 final class WechatLoginHandleToObserve: NSObject {

@@ -13,12 +13,21 @@ private let screenWidth = UIScreen.main.bounds.size.width
 private let viewWidth = screenWidth - 40
 
 protocol ThirdLoginViewProtocol: class {
-   func  didClickItem(name: String)
+    func  didClickItem(name: String)
 }
 
 class ThirdLoginView: UIView {
     
-    let thirdParties = ["手机号", "QQ", "微信","扫码","微薄","","",""]
+    //    let thirdParties = ["手机号", "QQ", "微信","扫码","微薄","","",""]
+    let thirdParties = [ ThirdPlatform.phone.rawValue,
+                         ThirdPlatform.qq.rawValue,
+                         ThirdPlatform.wechat.rawValue,
+                         ThirdPlatform.scan.rawValue,
+                         ThirdPlatform.weibo.rawValue,
+                         ThirdPlatform.empty.rawValue,
+                         ThirdPlatform.empty.rawValue,
+                         ThirdPlatform.empty.rawValue
+    ]
     let pageSize  = 4
     
     weak var delegate: ThirdLoginViewProtocol?
@@ -137,7 +146,7 @@ extension ThirdLoginView: UICollectionViewDataSource, UICollectionViewDelegate {
         delegate?.didClickItem(name: title)
     }
     
-
+    
 }
 
 class ThirdLoginItemCell: UICollectionViewCell { //70 = 10| 30 + 20 |10

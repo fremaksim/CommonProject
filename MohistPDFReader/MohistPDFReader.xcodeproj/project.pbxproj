@@ -46,6 +46,11 @@
 		6A5C5A822196F11100A197A1 /* MohistSMSVerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A812196F11100A197A1 /* MohistSMSVerificationCodeView.swift */; };
 		6A5C5A842199508A00A197A1 /* SmsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A832199508A00A197A1 /* SmsViewModel.swift */; };
 		6A5C5A862199558D00A197A1 /* UIBarButtonItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5C5A852199558D00A197A1 /* UIBarButtonItemExtension.swift */; };
+		6A79ACCD21C74AFA0095FA51 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A79ACCC21C74AFA0095FA51 /* AppHelper.swift */; };
+		6A79ACCF21C77BCA0095FA51 /* ModelJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A79ACCE21C77BCA0095FA51 /* ModelJSON.swift */; };
+		6AA76B1D21F088A800F58FD7 /* ThirdPlatformManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA76B1C21F088A800F58FD7 /* ThirdPlatformManager.swift */; };
+		6AB6635521DCE3DB005709B6 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6AB6635421DCE3DB005709B6 /* WeiboSDK.bundle */; };
+		6AB6635721DCE855005709B6 /* WeiboLoginHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6635621DCE855005709B6 /* WeiboLoginHandle.swift */; };
 		6AD302AB219DA20D000BF9D6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD302AA219DA20D000BF9D6 /* AboutViewController.swift */; };
 		6AD302AD219DA22C000BF9D6 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD302AC219DA22C000BF9D6 /* AboutViewModel.swift */; };
 		6AD302AF219DA457000BF9D6 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD302AE219DA457000BF9D6 /* LogoutViewController.swift */; };
@@ -129,6 +134,11 @@
 		6A5C5A812196F11100A197A1 /* MohistSMSVerificationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MohistSMSVerificationCodeView.swift; sourceTree = "<group>"; };
 		6A5C5A832199508A00A197A1 /* SmsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsViewModel.swift; sourceTree = "<group>"; };
 		6A5C5A852199558D00A197A1 /* UIBarButtonItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtension.swift; sourceTree = "<group>"; };
+		6A79ACCC21C74AFA0095FA51 /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
+		6A79ACCE21C77BCA0095FA51 /* ModelJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelJSON.swift; sourceTree = "<group>"; };
+		6AA76B1C21F088A800F58FD7 /* ThirdPlatformManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPlatformManager.swift; sourceTree = "<group>"; };
+		6AB6635421DCE3DB005709B6 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = WeiboSDK.bundle; path = MohistPDFReader/WeiboSDK.bundle; sourceTree = "<group>"; };
+		6AB6635621DCE855005709B6 /* WeiboLoginHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboLoginHandle.swift; sourceTree = "<group>"; };
 		6AD302AA219DA20D000BF9D6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		6AD302AC219DA22C000BF9D6 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		6AD302AE219DA457000BF9D6 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
@@ -445,12 +455,23 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		6A79ACCB21C74ADD0095FA51 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				6A79ACCC21C74AFA0095FA51 /* AppHelper.swift */,
+				6A79ACCE21C77BCA0095FA51 /* ModelJSON.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		6AF3543F219A65F800441752 /* LoginConstant */ = {
 			isa = PBXGroup;
 			children = (
 				6AF35440219A662600441752 /* ThirdParty.swift */,
 				6AF3544D219AA65000441752 /* QQLoginManager.swift */,
 				6AF3544F219AA96800441752 /* WechatLoginHandle.swift */,
+				6AB6635621DCE855005709B6 /* WeiboLoginHandle.swift */,
+				6AA76B1C21F088A800F58FD7 /* ThirdPlatformManager.swift */,
 			);
 			path = LoginConstant;
 			sourceTree = "<group>";
@@ -486,6 +507,7 @@
 		6AF3B7F72192815300913CA9 = {
 			isa = PBXGroup;
 			children = (
+				6AB6635421DCE3DB005709B6 /* WeiboSDK.bundle */,
 				6A5C5A3C2195706700A197A1 /* R.generated.swift */,
 				6AF3B8022192815300913CA9 /* MohistPDFReader */,
 				6AF3B8012192815300913CA9 /* Products */,
@@ -505,6 +527,7 @@
 		6AF3B8022192815300913CA9 /* MohistPDFReader */ = {
 			isa = PBXGroup;
 			children = (
+				6A79ACCB21C74ADD0095FA51 /* Tool */,
 				6AF35451219ABBC800441752 /* Storage */,
 				6AF3544A219A9C5C00441752 /* Log */,
 				6A5C5A782196C22700A197A1 /* Core */,
@@ -723,6 +746,7 @@
 				6AF3B80E2192815400913CA9 /* LaunchScreen.storyboard in Resources */,
 				6AF3B80B2192815400913CA9 /* Assets.xcassets in Resources */,
 				6AF3B8092192815300913CA9 /* Main.storyboard in Resources */,
+				6AB6635521DCE3DB005709B6 /* WeiboSDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,9 +803,11 @@
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Siren/Siren.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -797,9 +823,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Siren.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -817,8 +845,10 @@
 				6A5C5A5B2196B13100A197A1 /* WelcomeViewModel.swift in Sources */,
 				6A5C5A802196D17500A197A1 /* SignInSignupCoordinator.swift in Sources */,
 				6AF3B8262192B41500913CA9 /* AdPage.swift in Sources */,
+				6A79ACCD21C74AFA0095FA51 /* AppHelper.swift in Sources */,
 				6AF3B8062192815300913CA9 /* ViewController.swift in Sources */,
 				6A5C5A712196B9EB00A197A1 /* ProfileCoordinator.swift in Sources */,
+				6AB6635721DCE855005709B6 /* WeiboLoginHandle.swift in Sources */,
 				6AD302AD219DA22C000BF9D6 /* AboutViewModel.swift in Sources */,
 				6AF35449219A7BC000441752 /* ThirdViewModel.swift in Sources */,
 				6A5C5A6C2196B7C200A197A1 /* DiscoveryViewController.swift in Sources */,
@@ -833,6 +863,7 @@
 				6AF3540A2199658900441752 /* UIViewController.swift in Sources */,
 				6AF35455219ABC2800441752 /* MoStorage.swift in Sources */,
 				6A5C5A352195619A00A197A1 /* TelephoneNationalCode.swift in Sources */,
+				6A79ACCF21C77BCA0095FA51 /* ModelJSON.swift in Sources */,
 				6AF3540E2199691500441752 /* DeviceHelper.swift in Sources */,
 				6A5C5A1C2194299900A197A1 /* AppVersion.swift in Sources */,
 				6AF3B8042192815300913CA9 /* AppDelegate.swift in Sources */,
@@ -845,6 +876,7 @@
 				6A5C5A48219682B300A197A1 /* ScanQRCodeLoginViewController.swift in Sources */,
 				6A18C64221930C4D009C1870 /* ADPageViewWelcomeViewModel.swift in Sources */,
 				6AD302B3219E59CB000BF9D6 /* TableViewCellExtension.swift in Sources */,
+				6AA76B1D21F088A800F58FD7 /* ThirdPlatformManager.swift in Sources */,
 				6A5C5A772196BDA500A197A1 /* HomeCoordinator.swift in Sources */,
 				6AF35450219AA96800441752 /* WechatLoginHandle.swift in Sources */,
 				6A5C5A592196B05600A197A1 /* WelcomeViewController.swift in Sources */,
@@ -1116,7 +1148,7 @@
 					"\"UIKit\"",
 					"-fobjc-arc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mozheanquan.MohistPDFReader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mozheanquan.mohistDigitalEncryption;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MohistPDFReader/MohistPDFReader-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1225,7 +1257,7 @@
 					"\"UIKit\"",
 					"-fobjc-arc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mozheanquan.MohistPDFReader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mozheanquan.mohistDigitalEncryption;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MohistPDFReader/MohistPDFReader-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

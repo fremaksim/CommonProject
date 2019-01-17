@@ -8,3 +8,5 @@
 #import <TencentOpenAPI/QQApiInterfaceObject.h>
 //#import <TencentOpenAPI/sdkdef.h>
 #import "WXApi.h"
+#import "WeiboSDK.h"
+#import "WBHttpRequest.h"

@@ -29,7 +29,7 @@ public class AdPage: Codable {
     // 时间间隔
     var timeInterval: Int = 3
     
-    
+    // 预留
     var localPath: String?
     
     // 测试用

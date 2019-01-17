@@ -153,22 +153,34 @@ extension SignInSignupViewController: ThirdLoginViewProtocol {
         
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         let action = UIAlertAction(title: "确定", style: .default) { [weak self](_) in
-            if name == "扫码" {
+            if name == ThirdPlatform.scan.rawValue {// 扫码
                 let vc = ScanQRCodeLoginViewController()
                 self?.navigationController?.pushViewController(vc, animated: true)
-            }else if name == "QQ"{
+                
+            }else if name == ThirdPlatform.qq.rawValue {// QQ
                 guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
                 let permissions = [kOPEN_PERMISSION_GET_USER_INFO, kOPEN_PERMISSION_GET_SIMPLE_USER_INFO]
                 appDelegate.tencentAuth.authorize(permissions)
-            }else if name == "微信" {
+                
+            }else if name == ThirdPlatform.wechat.rawValue {// 微信
                 WechatLoginHandle.shared.sendWechatAuth(completion: { (userInfo, error) in
                     guard let userInfo = userInfo else {
-                        if let error = error {
+                        if let error = error as NSError? {
                             LogManager.shared.log.error(error.localizedDescription)
+                            if error.domain == ThirdParty(.wechat).sourceApplicationKey, error.code == 0 {
+                                //pop 微信没安装
+                            }
                         }
                         return
                     }
                     LogManager.shared.log.info(userInfo)
+                })
+            }else if name == ThirdPlatform.weibo.rawValue {// 微博
+                LogManager.shared.log.info("微博")
+                WeiboLoginHandle.shared.sendWeiboOauth(requestInfo: ["SSO_From": "SignInSignupViewController"], completion: { (userInfo, error) in
+                    if let userInfo = userInfo {
+                        LogManager.shared.log.info(userInfo)
+                    }
                 })
             }
         }

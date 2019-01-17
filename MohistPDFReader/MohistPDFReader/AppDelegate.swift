@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Siren // for test Bundle ID  com.ruifu.technology.RuiFuBox ,origin Bundle ID com.mozheanquan.MohistPDFReader
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -43,10 +44,70 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coordinator.start()
         
         registerWeiXinAPI()
+        registerWeboSDK()
+        
+        //        setupSiren()
         
         threeDimensionalTouch(launchOptions)
         
+        se7enForTest()
+        
         return true
+    }
+    
+    private func se7enForTest() {
+        
+        print("Points bounds: \(UIScreen.main.bounds)")
+        print("Points scale: \(UIScreen.main.scale)")
+        
+        print("Pixels bounds: \(UIScreen.main.nativeBounds)")
+        print("Pixels scale: \(UIScreen.main.nativeScale)")
+        
+        if UIScreen.main.scale != UIScreen.main.nativeScale {
+            
+        }
+        
+        
+        
+        /*  let class1 = Class(classId: "1", name: "Math")
+         let mathTeacher = Teacher(name: "mm", age: 30, salary: 100)
+         mathTeacher.title = "Species Teacher"
+         class1.teacher = mathTeacher
+         let student1 = Student(name: "ww", age: 11, id: "1")
+         let student2 = Student(name: "zz", age: 11, id: "2")
+         let student3 = Student(name: "yy", age: 11, id: "3")
+         class1.students = [student1, student2, student3]
+         
+         let class1Dict = ModelJSON.convertToDictNesting(obj: class1)
+         print(class1Dict)
+         
+         let class2 = Class(classId: "1", name: "Chinese")
+         let chineseTeacher = Teacher(name: "ll", age: 35, salary: 100)
+         class2.teacher = chineseTeacher
+         class2.students = [student1, student2]
+         let class2Dict = ModelJSON.convertToDictNesting(obj: class2)
+         print(class2Dict)
+         */
+        
+        let infomation = Info(id: "ioood")
+        let deviceInfo = DeviceInfo(id: "i0do", model: "pdf")
+        
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        if let infoData = try? encoder.encode(infomation) {
+            if let newInfo = try? decoder.decode(Info.self, from: infoData) {
+                log.info(newInfo.identifier)
+            }
+        }
+        if let deviceData = try? encoder.encode(deviceInfo) {
+            do{
+                let newDevice = try decoder.decode(DeviceInfo.self, from: deviceData)
+                log.info(newDevice.identifier)
+                log.info(newDevice.model)
+            }catch {
+                log.error(error.localizedDescription)
+            }
+        }
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -66,6 +127,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         log.info("WillEnterForeground")
+        
+        Siren.shared.checkVersion(checkType: .immediately)
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -73,9 +136,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         log.info("DidBecomeActive")
         
+        Siren.shared.checkVersion(checkType: .immediately)
+        
         threeDimensionalTouchAppBecomeActive()
         
-        loadADWelcomePage()
+        //        loadADWelcomePage()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
@@ -150,6 +215,43 @@ extension AppDelegate: WXApiDelegate {
     }
 }
 
+//MARK: - 微博登录
+extension AppDelegate: WeiboSDKDelegate {
+    func didReceiveWeiboRequest(_ request: WBBaseRequest!) {
+        
+    }
+    
+    func didReceiveWeiboResponse(_ response: WBBaseResponse!) {
+        if response.isKind(of: WBAuthorizeResponse.self) {
+            log.info(response)
+            if let newResponse = response as? WBAuthorizeResponse {
+                _ = newResponse.refreshToken
+                let wbCurrentUserID = newResponse.userID
+                guard let wbToken = newResponse.accessToken else {
+                    return
+                }
+                
+                //               log.info(wbToken)
+                //                log.info(wbCurrentUserID)
+                //                log.info(wbRefreshToken)
+                WeiboLoginHandle.shared.getUserInfo(uid: wbCurrentUserID, accessToken: wbToken, screenName: nil) { (userInfo, error) in
+                    
+                }
+                
+            }
+        }
+    }
+    
+    func registerWeboSDK() {
+        WeiboSDK.enableDebugMode(true)
+        let id = ThirdParty(.weibo).appIdKey.id
+        WeiboSDK.registerApp(id)
+    }
+    
+    
+    
+    
+}
 //MARK: --- 处理第三方 回调
 extension AppDelegate {
     func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
@@ -159,6 +261,10 @@ extension AppDelegate {
         }
         
         if WXApi.handleOpen(url, delegate: self) {
+            return true
+        }
+        
+        if WeiboSDK.handleOpen(url, delegate: self) {
             return true
         }
         return true
@@ -175,16 +281,109 @@ extension AppDelegate {
             // 微信 的回调
             return  WXApi.handleOpen(url, delegate: self)
         }
+        if urlKey == ThirdParty(.weibo).sourceApplicationKey {
+            // 微博 的回调
+            return WeiboSDK.handleOpen(url, delegate: self)
+        }
         
         return true
     }
     
 }
 
+//MARK: - Version Updte
+extension AppDelegate: SirenDelegate {
+    fileprivate  func setupSiren() {
+        let siren = Siren.shared
+        
+        // Optional
+        siren.delegate = self
+        
+        // Optional
+        siren.debugEnabled = true
+        
+        // Optional - Change the name of your app. Useful if you have a long app name and want to display a shortened version in the update dialog (e.g., the UIAlertController).
+        //        siren.appName = "Test App Name"
+        
+        // Optional - Change the various UIAlertController and UIAlertAction messaging. One or more values can be changes. If only a subset of values are changed, the defaults with which Siren comes with will be used.
+        //        siren.alertMessaging = SirenAlertMessaging(updateTitle: NSAttributedString(string: "New Fancy Title"),
+        //                                                   updateMessage: NSAttributedString(string: "New message goes here!"),
+        //                                                   updateButtonMessage: NSAttributedString(string: "Update Now, Plz!?"),
+        //                                                   nextTimeButtonMessage: NSAttributedString(string: "OK, next time it is!"),
+        //                                                   skipVersionButtonMessage: NSAttributedString(string: "Please don't push skip, please don't!"))
+        
+        // Optional - Defaults to .Option
+        //        siren.alertType = .option // or .force, .skip, .none
+        
+        // Optional - Can set differentiated Alerts for Major, Minor, Patch, and Revision Updates (Must be called AFTER siren.alertType, if you are using siren.alertType)
+        
+        // 这里加入后台API版本升级检查,更据条件设置级别
+        
+        siren.majorUpdateAlertType = .force
+        siren.minorUpdateAlertType = .option
+        siren.patchUpdateAlertType = .option
+        siren.revisionUpdateAlertType = .option
+        
+        // Optional - Sets all messages to appear in Russian. Siren supports many other languages, not just English and Russian.
+        //        siren.forceLanguageLocalization = .russian
+        
+        // Optional - Set this variable if your app is not available in the U.S. App Store. List of codes: https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/AppStoreTerritories.html
+        siren.countryCode = "cn"
+        
+        // Optional - Set this variable if you would only like to show an alert if your app has been available on the store for a few days.
+        // This default value is set to 1 to avoid this issue: https://github.com/ArtSabintsev/Siren#words-of-caution
+        // To show the update immediately after Apple has updated their JSON, set this value to 0. Not recommended due to aforementioned reason in https://github.com/ArtSabintsev/Siren#words-of-caution.
+        siren.showAlertAfterCurrentVersionHasBeenReleasedForDays = 0
+        
+        // Optional (Only do this if you don't call checkVersion in didBecomeActive)
+        //        siren.checkVersion(checkType: .immediately)
+    }
+    //MARK: - Siren Delegate Methods
+    func sirenDidShowUpdateDialog(alertType: Siren.AlertType) {
+        print(#function, alertType)
+    }
+    
+    func sirenUserDidCancel() {
+        print(#function)
+    }
+    
+    func sirenUserDidSkipVersion() {
+        print(#function)
+    }
+    
+    func sirenUserDidLaunchAppStore() {
+        print(#function)
+    }
+    
+    func sirenDidFailVersionCheck(error: Error) {
+        print(#function, error)
+    }
+    
+    func sirenLatestVersionInstalled() {
+        print(#function, "Latest version of app is installed")
+    }
+    
+    func sirenNetworkCallDidReturnWithNewVersionInformation(lookupModel: SirenLookupModel) {
+        print(#function, "\(lookupModel)")
+    }
+    
+    // This delegate method is only hit when alertType is initialized to .none
+    func sirenDidDetectNewVersionWithoutAlert(title: String, message: String, updateType: UpdateType) {
+        print(#function, "\n\(title)\n\(message).\nRelease type: \(updateType.rawValue.capitalized)")
+    }
+}
+
 //MARK: - AD、Welecome
 extension AppDelegate {
     
     fileprivate func  loadADWelcomePage(){
+        
+        //get userdefaults lastest version
+        
+        //compare with current version
+        
+        //save version to lastest userdefaults
+        
         let isShow = true
         if isShow {
             guard let rootVC = window?.rootViewController as? NavigationController else { return }
